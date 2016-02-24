@@ -1,7 +1,26 @@
+% Textility of Code: A catalogue of errors
+
+# Introduction
+
+In the following we explore the notion of code as weave. A challenge
+for any discussion of coding of weaves is the Jacquard mechanism in
+machine looms, often recounted as the first meeting point of digital
+technology and weaving. This is wrong for many reasons, but most
+crucially, weaving involves the interaction of discrete threads and so
+has itself always been digital technology since prehistoric times.
+Further more code involves human enagement with structure, whereas the
+Jacquard mechanism allows weaves to be considered as two dimensional
+images, rather than the three dimensional structures which give rise
+to them.
+
+Through the following chapter, we find that patterns are at the very
+basis of computation, and that the punch cards of the Jacquard
+mechanism are just one manifestation of this.
+
+# Dyadic arithmetic
 
 
-
-## Mathematickal arts workshop (foam brussels)
+# Mathematickal arts workshop (foam brussels)
 
 plain weave kernel
 - used for lsystem colour pattern simulation
@@ -46,7 +65,7 @@ Failures:
 - no kernel matrix
 - no selvedge
 
-## flotsam raspberry pi simulation
+# flotsam raspberry pi simulation
 
 Python, hardware integration - adding a matrix:
 
@@ -65,7 +84,7 @@ Failures
 - tangible hardware (lsystem) not representing how weavers think
 - visualisation is cellular rather than representing continuous thread
 
-## Dyadic browser weaving
+# Dyadic browser weaving
 compiled scheme code and rendering based on camouflage pattern research
 \cite{4dfb7697-399b-4aed-aac9-4a5b1e40677d} \cite{1e5bb01b-81de-4c67-9664-eee0cf0b5c31}
 
