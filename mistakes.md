@@ -22,17 +22,33 @@ mechanism are just one manifestation of this.
 
 # Mathematickal arts workshop (foam brussels)
 
-plain weave kernel
-- used for lsystem colour pattern simulation
+Plain or tabby weave is the simplest form of weaving, but when combined
+with sequences of colour it can produce many different types of pattern.
 
-     ; return warp or weft, dependant on the position
-     (define (stitch x y warp weft)
-       (if (eq? (modulo x 2)
-                (modulo y 2))
-           warp weft))
+Some of these patterns when combined with muted colours, have in the
+past been used as a type of camouflage – and are classified into
+District Checks[] for use in hunting in Lowland Scotland. 
 
-this function prints plain weave given warp and weft, and returns lists where characters represent colours.
-eg...
+A few lines of Scheme calculate and print the colours of an arbitrarily
+sized weave, by using lists of warp and weft as input.
+
+    ; return warp or weft, dependant on the position
+    (define (stitch x y warp weft)
+      (if (eq? (modulo x 2)
+               (modulo y 2))
+      warp weft))
+
+    ; prints out a weaving
+    (define (weave warp weft)
+      (for ((x (in-range 0 (length weft))))
+         (for ((y (in-range 0 (length warp))))
+            (display (stitch x y 
+                             (list-ref warp y)
+                             (list-ref weft x))))
+       (newline)))
+
+We can visualising the weaves with single characters representing
+colours for ascii previewing, here are some examples:
 
 `(weave '(O O O O O O O) '(: : : : : : : : :))`
 
@@ -58,8 +74,25 @@ eg...
      O O : O O O : O O O
      : O : : : O : : : O
 
+This looked quite promising as ascii art, but I didn’t really know how
+it would translate into a textile. I also wanted to look into ways of
+generating new patterns algorithmically, using formal grammars. The idea
+is that you begin with an axiom, or starting state, and do a 'search
+replace' on it repeatedly following one or more simple rules:
 
-- pretty good, minimal
+Axiom: O
+Rule 1: O => O : O :
+Rule 2: : => : O :
+Run for 3 generations
+
+![](figures/IMAG0376.jpg)
+
+![](figures/IMAG0378-2.jpg)
+
+This technique draws comparisons with Jacquard looms, but obviously it’s
+far simpler as the weave itself is the same, we are only changing
+between 2 colours (and a human is very much required to do the weaving
+in this case). 
 
 Failures: 
 - no kernel matrix
@@ -67,7 +100,24 @@ Failures:
 
 # flotsam raspberry pi simulation
 
-Python, hardware integration - adding a matrix:
+Flotsam is a prototype screenless tangible programming language largely
+built from driftwood. It is a declarative style L system for describing
+weave structure and pattern with yarn width and colour. The LEDs
+indicate that the evaluation happens simultaneously, as this is a
+functional language. The blocks represent blue and pink yarn in two
+widths, with rules to produce the warp/weft sequence based on the rows
+the blocks are positioned on:
+
+![](figures/flotsam.jpg)
+
+The weaving simulation is written in pygame, and is deliberately
+designed to make alternative weave structures than those possible with
+Jacquard looms by including yarn properties. The version in the video is
+plain weave, but more complex structures can be defined as below – in
+the same way as Alex’s gibber software:
+
+![](figures/star.png)
+
 
     # return warp or weft, dependant on the position
     def stitch(self, x, y, warp, weft):
@@ -78,7 +128,8 @@ Python, hardware integration - adding a matrix:
             return weft
 
 self.structure is an array width*height that determines the pattern
-structure can be read from block pattern in tangible hardware or preset with tangible hardware controlling the colour sequence
+structure can be read from block pattern in tangible hardware or preset
+with tangible hardware controlling the colour sequence
 
 Failures
 - tangible hardware (lsystem) not representing how weavers think
