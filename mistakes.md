@@ -332,7 +332,7 @@ If we put the twists in the loops, we can make small programs with complex resul
       (twist 5)
       (weave-back 4))
 
-![](figures/twistpat-comb.png)
+![](figures/twistpat-comb.jpg)
    
 Failures:
 
