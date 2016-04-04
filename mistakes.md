@@ -13,7 +13,7 @@ Jacquard mechanism allows weaves to be considered as two dimensional
 images, rather than the three dimensional structures which give rise
 to them.
 
-Through the following chapter, we find that patterns are at the very
+Through the following article, we find that patterns are at the very
 basis of computation, and that the punch cards of the Jacquard
 mechanism are just one manifestation of this.
 
