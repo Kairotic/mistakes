@@ -8,7 +8,7 @@ machine looms, often recounted as the first meeting point of digital
 technology and weaving. This is wrong for many reasons, but most
 crucially, weaving involves the interaction of discrete threads and so
 has itself always been digital technology since prehistoric times.
-Further more code involves human enagement with structure, whereas the
+Furthermore, code involves human enagement with structure, whereas the
 Jacquard mechanism allows weaves to be considered as two dimensional
 images, rather than the three dimensional structures which give rise
 to them.
