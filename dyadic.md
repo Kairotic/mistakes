@@ -1,4 +1,4 @@
 
-# Dyadic arithmetic
+# Dyadic arithmetic in the book of elements
 
 
