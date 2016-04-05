@@ -24,3 +24,5 @@ that exist is called one.
 data Unit = Unit
 ~~~~
 
+The first definition appears straightforward, but allows us to
+introduce our first piece of Haskell code.
