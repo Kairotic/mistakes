@@ -15,3 +15,5 @@ this system of counting in a contemporary programming language.
 We will make this attempt using the Haskell programming language,
 known for its very strong focus on defining the types of things in
 clear way.
+
+A unit is that by virtue of which each of the things that exist is called one.
