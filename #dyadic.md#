@@ -42,5 +42,6 @@ data Unit a = forall a. Unit
 ~~~~
 
 As the `forall` suggests, the type `a` can represent any other type
-that we might define, such as `Sheep` or `Cow`. It means that we can
-use the instance `Unit`
+that we might define, such as `Sheep` or `Cow`. In practice this type
+parameter does nothing, apart from indicate that a `Unit` is thought
+about with reference to a concrete type of thing. For simpl
