@@ -18,7 +18,6 @@ the same way as Alex’s gibber software:
 
 ![](figures/star.png)
 
-
     # return warp or weft, dependant on the position
     def stitch(self, x, y, warp, weft):
         #if x % 2 == y % 2:
