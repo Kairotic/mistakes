@@ -7,5 +7,9 @@ weaving. However, if we look back, we realise that the birth of
 discrete mathematics took place when weaving was the predominant
 technology. The hypothesis of Klück (TODO: cross ref Ellen's article),
 which lies at the core of the present special issue, is that discrete
-mathematics began with thought processes of weavers.
+mathematics began with thought processes of weavers, and that this is
+implicit in the system of counting given in Euclid's Book of Elements.
+To engage with this hypothesis, we attempted to implement this system
+of counting in a contemporary programming language.
+
 
