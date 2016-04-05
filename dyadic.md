@@ -41,3 +41,5 @@ parameter `a` for the type:
 data Unit a = forall a. Unit
 ~~~~
 
+As the `forall` suggests, we can swap `a` for any other type that we
+might define, such as `Sheep` or `Cow`.
