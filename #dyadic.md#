@@ -32,8 +32,8 @@ type, which here is again called `Unit`.
 
 However, the above already has an error, in that in ancient Greece, a
 unit would not be thought of as abstract in this way; you could think
-of a unit of sheep, but as now, it would be nonsensical to think of a
-unit of sheep as equiv
+of a unit of sheep, but it would be nonsensical to think of a unit as
+being independent of such a category. Haskell allows us to model this
 
 ~~~~{.haskell .colourtex}
 data Unit a = Unit
