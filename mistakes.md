@@ -8,5 +8,4 @@ Through the following article, we look for different ways to represent
 the structure of ancient weaves with contemporary source code.
 
 
-
 Citation test \cite{Cocker_2013}
