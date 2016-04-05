@@ -27,8 +27,8 @@ data Unit = Unit
 The first definition appears straightforward, but allows us to
 introduce our first piece of Haskell code, which simply defines a
 *data type*. On the left is given the name of the data type, in this
-case `Unit`, and on the right all the possible instanaces of that
-type, which here is again called `Unit`.
+case `Unit`, and on the right all the possible instances of that type,
+which here is again called `Unit`.
 
 However, the above already has an error, in that in ancient Greece, a
 unit would not be thought of as abstract in this way; you could think
@@ -41,5 +41,10 @@ parameter `a` for the type:
 data Unit a = forall a. Unit
 ~~~~
 
-As the `forall` suggests, we can swap `a` for any other type that we
-might define, such as `Sheep` or `Cow`.
+As the `forall` suggests, the type `a` can represent any other type
+that we might define, such as `Sheep` or `Cow`. In practice this type
+parameter does nothing, apart from indicate that a `Unit` is thought
+about with reference to a concrete type of thing. For simplicity, we
+will continue with the simpler definition of `data Unit = Unit` as the
+basis of the rest of this section.
+
