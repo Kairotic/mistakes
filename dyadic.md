@@ -12,4 +12,3 @@ implicit in the system of counting given in Euclid's Book of Elements.
 To engage with this hypothesis, we attempted to implement this system
 of counting in a contemporary programming language.
 
-
