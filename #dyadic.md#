@@ -30,7 +30,8 @@ introduce our first piece of Haskell code, which simply defines a
 case `Unit`, and on the right all the possible instanaces of that
 type, which here is again called `Unit`.
 
-However, the above 
+However, the above already has an error, in that in ancient Greece,
+a unit was not thought of as abstract in this way; a unit would always be discu
 
 ~~~~{.haskell .colourtex}
 data Unit a = Unit
