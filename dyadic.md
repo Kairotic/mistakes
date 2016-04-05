@@ -14,7 +14,8 @@ this system of counting in a contemporary programming language.
 
 We will make this attempt using the Haskell programming language,
 known for its very strong focus on defining the types of things in
-clear way. We will approach the definitions given in book VII.
+clear way. We will approach the definitions given in book VII in turn,
+in the following, and see how far we can get.
 
 **Definition 1**: A unit is that by virtue of which each of the things
 that exist is called one.
