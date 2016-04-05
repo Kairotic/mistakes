@@ -17,4 +17,6 @@ known for its very strong focus on defining the types of things in
 clear way. We will approach the definitions given in book VII.
 
 
-A unit is that by virtue of which each of the things that exist is called one.
+Definition 1: A unit is that by virtue of which each of the things
+that exist is called one.
+
