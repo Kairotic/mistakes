@@ -12,3 +12,6 @@ implicit in the system of counting defined in Euclid's Book of Elements
 (book VII).  To engage with this hypothesis, we attempted to implement
 this system of counting in a contemporary programming language.
 
+We will make this attempt using the Haskell programming language,
+known for its very strong focus on defining the types of things in
+clear way.
