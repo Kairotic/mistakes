@@ -29,3 +29,14 @@ introduce our first piece of Haskell code, which simply defines a
 *data type*. On the left is given the name of the data type, in this
 case `Unit`, and on the right all the possible instanaces of that
 type, which here is again called `Unit`.
+
+However, the above already has an error, in that in ancient Greece, a
+unit would not be thought of as abstract in this way; you could think
+about a sheep unit, or a cow unit, but ancient Greeks would find it
+nonsensical to think of a unit as being independent of such a
+category. Haskell allows us to model this as this by adding a
+parameter `a` for the type:
+
+~~~~{.haskell .colourtex}
+data Unit a = forall a. Unit
+~~~~
