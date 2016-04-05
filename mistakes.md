@@ -7,11 +7,6 @@
 Through the following article, we look for different ways to represent
 the structure of ancient weaves with contemporary source code.
 
-
-# Dyadic browser weaving
-compiled scheme code and rendering based on camouflage pattern research
-\cite{4dfb7697-399b-4aed-aac9-4a5b1e40677d} \cite{1e5bb01b-81de-4c67-9664-eee0cf0b5c31}
-
 # Four shaft loom simulation
 
 Instead of defining the pattern you want directly, you are describing
