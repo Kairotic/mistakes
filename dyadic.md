@@ -40,3 +40,4 @@ parameter `a` for the type:
 ~~~~{.haskell .colourtex}
 data Unit a = forall a. Unit
 ~~~~
+
