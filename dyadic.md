@@ -25,4 +25,5 @@ data Unit = Unit
 ~~~~
 
 The first definition appears straightforward, but allows us to
-introduce our first piece of Haskell code.
+introduce our first piece of Haskell code, which simply defines a
+*data type*.
