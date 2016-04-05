@@ -30,8 +30,8 @@ introduce our first piece of Haskell code, which simply defines a
 case `Unit`, and on the right all the possible instanaces of that
 type, which here is again called `Unit`.
 
-However, 
+However, the above 
 
 ~~~~{.haskell .colourtex}
-data Unit = Unit
+data Unit a = Unit
 ~~~~
