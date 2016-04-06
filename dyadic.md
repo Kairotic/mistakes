@@ -51,11 +51,13 @@ basis of the rest of this section.
 ## Definition 2: A number is a multitude composed of units.
 
 The second definition again appears straightforward; in code terms we
-can think of a multitude as a list, which is denoted with `[]`:
+can think of a multitude as a list, which is denoted by putting the
+`Unit` datatype in brackets:
 
 ~~~~{.haskell .colourtex}
 type Number = [Unit]
 ~~~~
+
 
 instance Show Unit where
   show x = "x"
