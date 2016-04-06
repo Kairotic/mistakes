@@ -58,9 +58,9 @@ can think of a multitude as a list, which is denoted by putting the
 type Number = [Unit]
 ~~~~
 
+However again, the detail makes this a little bit complex. Firstly,
+such a list is allowed to be empty, whereas the number zero is not
+represented by this definition. Indeed, neither is the number one -- a
+multitude begins with two, less than that is not considered to be a
+number.
 
-
-
-instance Show Unit where
-  show x = "x"
-instance Eq Unit
