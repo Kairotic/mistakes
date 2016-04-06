@@ -86,3 +86,4 @@ white = Sheep "white"
 black = Sheep "black"
 AddUnit (Unit white) (AddUnit (Unit white) (Pair (Unit white) (Unit black)))
 ~~~~
+
