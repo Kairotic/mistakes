@@ -17,6 +17,7 @@ instance Show Unit where
   show x = "x"
 instance Eq Unit
 
+{-
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
@@ -79,4 +80,5 @@ fromInt :: Integral a => a -> Multitude b
 fromInt 2 = Pair Unit Unit
 fromInt n | n < 2 = error "There are no numbers < 2"
           | otherwise = AddUnit Unit $ fromInt (n-1)
+-}
 -}
