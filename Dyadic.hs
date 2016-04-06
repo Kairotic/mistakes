@@ -34,18 +34,16 @@ instance Show (Multitude a) where
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-{-
-measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
-measure x [] = Just []
-measure x y = do a <- measure' x y
-                 b <- measure x a
-                 return (AddUnit Unit b)
--}
-
 subtract :: Multitude a -> Multitude a -> Maybe (Multitude a)
 subtract (AddUnit _ x) (AddUnit _ y) = measure' x y
 subtract (Pair _ _) (AddUnit _ (AddUnit _ x))  = Just x
 subtract _ _ = Nothing
+
+measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
+measure x [] = Just []
+measure x y = do a <- subtract x y
+                 b <- subtract x a
+                 return (AddUnit Unit b)
 
 -- isPart l g = isJust (measure l g)
 
