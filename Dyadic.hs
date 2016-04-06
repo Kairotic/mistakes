@@ -34,7 +34,7 @@ instance Show (Multitude a) where
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-measure :: Multitude -> Multitude -> Maybe Multitude
+measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measure x [] = Just []
 measure x y = do a <- measure' x y
                  b <- measure x a
