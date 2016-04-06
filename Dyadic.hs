@@ -34,13 +34,13 @@ instance Show (Multitude a) where
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-measure :: Number -> Number -> Maybe Number
+measure :: Multitude -> Multitude -> Maybe Multitude
 measure x [] = Just []
 measure x y = do a <- measure' x y
                  b <- measure x a
                  return (Unit:b)
 
-measure' :: Number -> Number -> Maybe Number
+measure' :: Multitude -> Multitude -> Maybe Multitude
 measure' [] x = Just x
 measure' x [] = Nothing
 measure' x y = measure' (tail x) (tail y)
