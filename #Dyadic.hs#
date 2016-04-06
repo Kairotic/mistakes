@@ -24,7 +24,7 @@ measure :: Multitude a -> (Multitude a) -> Maybe (Multitude a)
 measure x [] = Just []
 measure x y = do a <- measure' x y
                  b <- measure x a
-                 return (a:b)
+                 return (Unit:b)
 
 measure' :: Number -> Number -> Maybe Number
 measure' [] x = Just x
