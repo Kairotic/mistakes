@@ -17,7 +17,7 @@ data Multitude a = Pair (Unit a) (Unit a)
 
 instance Show (Unit a) where
   show x = "x"
-instance Eq (Unit a)
+-- instance Eq (Unit a)
 
 {-
 {- Def 3. A number is a part of a number, the less of the greater,
