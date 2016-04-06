@@ -55,7 +55,7 @@ can think of a multitude as a list, which is denoted by putting the
 `Unit` datatype in brackets:
 
 ~~~~{.haskell .colourtex}
-type Number = [Unit]
+type Multitude = [Unit]
 ~~~~
 
 However again, the detail makes this a little bit complex. Firstly,
@@ -64,7 +64,10 @@ represented by this definition. Indeed, neither is the number one -- a
 multitude begins with two, less than that is not considered to be a
 number.
 
+A way around this is to define the basis of a multitude as a pair, and
+model greater numbers with additional units relative to that:
+
 ~~~~{.haskell .colourtex}
-data Multitude = Pair Unit (Unit)
-    | AddUnit Unit (Multitude)
+data Multitude = Pair Unit Unit
+    | AddUnit Unit Multitude
 ~~~~
