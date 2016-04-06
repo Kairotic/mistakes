@@ -48,5 +48,5 @@ about with reference to a concrete type of thing. For simplicity, we
 will continue with the simpler definition of `data Unit = Unit` as the
 basis of the rest of this section.
 
-## Definition 1: A unit is that by virtue of which each of the things that exist is called one.
+## Definition 2: A number is a multitude composed of units.
 
