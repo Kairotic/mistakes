@@ -8,14 +8,14 @@ import Data.Maybe
 {- Def. 1 A unit (monas) is that by virtue of which each of the things that
    exist is called one. -}
 
-data Unit = Unit
+data Unit a = Unit a
 
 {- Def. 2 A number is a multitude composed of units. -}
-type Number = [Unit]
+type Multitude a = [Unit a]
 
-instance Show Unit where
+instance Show (Unit a) where
   show x = "x"
-instance Eq Unit
+instance Eq (Unit a)
 
 {-
 {- Def 3. A number is a part of a number, the less of the greater,
