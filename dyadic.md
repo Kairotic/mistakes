@@ -71,3 +71,6 @@ model greater numbers with additional units relative to that:
 data Multitude = Pair Unit Unit
     | AddUnit Unit Multitude
 ~~~~
+
+The number five would then be constructed with the expression `AddUnit
+Unit (AddUnit Unit (AddUnit Unit (Pair Unit Unit)))`.
