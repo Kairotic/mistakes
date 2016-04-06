@@ -15,12 +15,20 @@ data Unit a = forall a. Unit
 data Multitude a = Pair (Unit a) (Unit a)
               | AddUnit (Unit a) (Multitude a)
 
+
+fromInt :: Integral a => a -> Multitude b
+fromInt 2 = Pair Unit Unit
+fromInt n | n < 2 = error "There are no numbers < 2"
+          | otherwise = AddUnit Unit $ fromInt (n-1)
+
 instance Show (Unit a) where
   show x = "x"
 
 instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
   show (AddUnit u n) = show u ++ show n
+
+
 
 -- instance Eq (Unit a)
 
