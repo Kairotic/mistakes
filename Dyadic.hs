@@ -42,10 +42,10 @@ measure x y = do a <- measure' x y
                  return (AddUnit Unit b)
 -}
 
-measure' :: Multitude a -> Multitude a -> Maybe (Multitude a)
-measure' (AddUnit _ x) (AddUnit _ y) = measure' x y
-measure' (Pair _ _) (AddUnit _ (AddUnit _ x))  = Just x
-measure' _ _ = Nothing
+subtract :: Multitude a -> Multitude a -> Maybe (Multitude a)
+subtract (AddUnit _ x) (AddUnit _ y) = measure' x y
+subtract (Pair _ _) (AddUnit _ (AddUnit _ x))  = Just x
+subtract _ _ = Nothing
 
 -- isPart l g = isJust (measure l g)
 
