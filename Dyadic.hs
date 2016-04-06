@@ -31,7 +31,6 @@ instance Show (Multitude a) where
 
 -- instance Eq (Unit a)
 
-{-
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
@@ -48,6 +47,7 @@ measure' x y = measure' (tail x) (tail y)
 
 isPart l g = isJust (measure l g)
 
+{-
 {- Def. 5 The greater number is a multiple of the less when it is
    measured by the less. -}
 
