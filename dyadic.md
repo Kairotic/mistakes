@@ -64,8 +64,8 @@ sheep :: Unit Sheep
 sheep = Unit
 ~~~~
 
-Our sheep still has the type of `Unit Sheep`, but does not define any
-value for that sheep.
+Our sheep still has the type of `Unit Sheep`, but does not define
+anything about a particular sheep.
 
 ## Definition 2: A number is a multitude composed of units.
 
