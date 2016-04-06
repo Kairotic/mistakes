@@ -34,16 +34,20 @@ instance Show (Multitude a) where
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-remaining :: Multitude a -> Multitude a -> Multitude a
-remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
-remaining (Pair _ _) (AddUnit _ (AddUnit _ x))  = x
-remaining _ b = b
-
-
 instance Eq (Multitude a) where
   (Pair _ _) == (Pair _ _) = True
   (AddUnit _ a) == (AddUnit _ b) = a == b
   (_) == (_) = False
+
+measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
+measureAgainst (AddUnit _ x) (AddUnit _ y) = measureAgainst x y
+measureAgainst (Pair _ _) (AddUnit _ (AddUnit _ x)) = Just x
+measureAgainst _ _ = Nothing
+
+remaining :: Multitude a -> Multitude a -> Multitude a
+remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
+remaining _ b = b
+
 
 
 --measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
