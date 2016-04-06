@@ -39,6 +39,13 @@ remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
 remaining (Pair _ _) (AddUnit _ (AddUnit _ x))  = x
 remaining _ b = b
 
+
+instance Eq (Multitude a) where
+  (Pair _ _) == (Pair _ _) = True
+  (AddUnit _ a) == (AddUnit _ b) = a == b
+  (_) == (_) = False
+
+
 --measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 --measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair Unit Unit)
 --measure x y = do a <- remaining x y
