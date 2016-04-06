@@ -35,7 +35,7 @@ instance Show (Multitude a) where
    when it measures the greater -}
 
 remaining :: Multitude a -> Multitude a -> Maybe (Multitude a)
-remaining (AddUnit _ x) (AddUnit _ y) = measure' x y
+remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
 remaining (Pair _ _) (AddUnit _ (AddUnit _ x))  = Just x
 remaining _ _ = Nothing
 
