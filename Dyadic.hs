@@ -29,7 +29,6 @@ instance Show (Multitude a) where
   show (AddUnit u n) = show u ++ show n
 
 
-
 -- instance Eq (Unit a)
 
 {-
