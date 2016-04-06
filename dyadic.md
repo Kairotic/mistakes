@@ -96,6 +96,9 @@ data Multitude a = Pair (Unit a) (Unit a)
 The number four would then be constructed with the following:
 
 ~~~~{.haskell .colourtex}
-AddUnit Unit (AddUnit Unit (Pair Unit Unit))
+four = AddUnit Unit (AddUnit Unit (Pair Unit Unit))
 ~~~~
+
+We can visualise the number four by telling Haskell to show a `Unit`
+with an `x` and
 
