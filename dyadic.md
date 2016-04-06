@@ -99,9 +99,10 @@ The number four would then be constructed with the following:
 four = AddUnit Unit (AddUnit Unit (Pair Unit Unit))
 ~~~~
 
-We can visualise the number four by telling Haskell to show a `Unit`
-with an `x` and by stringing together the units across instances of
-`Pair` and `AddUnit`:
+It would be nice if we could 'see' this multitude more clearly.  We
+can visualise it by telling Haskell to show a `Unit` with an `x` and
+by stringing together the units across instances of `Pair` and
+`AddUnit`:
 
 ~~~~{.haskell .colourtex}
 instance Show (Unit a) where
@@ -111,3 +112,8 @@ instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
   show (AddUnit u n) = show u ++ show n
 ~~~~{.haskell .colourtex}
+
+~~~~{.haskell .colourtex}
+> four
+xxxx
+~~~~
