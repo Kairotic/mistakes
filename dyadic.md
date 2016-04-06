@@ -45,12 +45,12 @@ As the `forall` suggests, the type `a` can represent any other type
 that we might define, such as `Sheep` or `Cow`. In practice this type
 parameter does nothing, apart from indicate that a `Unit` is thought
 about with reference to a concrete type of thing. So to model an unit
-of Cow, we could do the following:
+of Sheep, we could do the following:
 
 ~~~~{.haskell .colourtex}
-data Cow = Cow {colour :: String}
+data Sheep = Sheep {colour :: String}
 
-cow = Unit (Cow "brown")
+sheep = Unit (Sheep "white")
 ~~~~
 
 ## Definition 2: A number is a multitude composed of units.
@@ -79,5 +79,10 @@ data Multitude a = Pair (Unit a) (Unit a)
     | AddUnit Unit Multitude
 ~~~~
 
-The number five would then be constructed with the expression `AddUnit
-Unit (AddUnit Unit (AddUnit Unit (Pair Unit Unit)))`.
+The number four would then be constructed with the following:
+
+~~~~{.haskell .colourtex}
+white = Sheep "white"
+black = Sheep "black"
+AddUnit (Unit white) (AddUnit (Unit white) (Pair (Unit white) (Unit black)))
+~~~~
