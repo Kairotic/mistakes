@@ -121,3 +121,7 @@ expression `four`, and the result is shown below):
 xxxx
 ~~~~
 
+{- Def 3. A number is a part of a number, the less of the greater,
+   when it measures the greater -}
+
+This definition is a little more complex.
