@@ -103,9 +103,11 @@ We can visualise the number four by telling Haskell to show a `Unit`
 with an `x` and by stringing together the units across instances of
 `Pair` and `AddUnit`:
 
+~~~~{.haskell .colourtex}
 instance Show (Unit a) where
   show x = "x"
 
 instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
   show (AddUnit u n) = show u ++ show n
+~~~~{.haskell .colourtex}
