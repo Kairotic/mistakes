@@ -37,7 +37,7 @@ instance Show (Multitude a) where
 remaining :: Multitude a -> Multitude a -> Multitude a
 remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
 remaining (Pair _ _) (AddUnit _ (AddUnit _ x))  = x
-remaining a b = a
+remaining _ b = b
 
 --measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 --measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair Unit Unit)
