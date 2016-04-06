@@ -10,8 +10,10 @@ import Data.Maybe
 
 data Unit a = forall a. Unit a
 
+
 {- Def. 2 A number is a multitude composed of units. -}
-type Multitude a = [Unit a]
+data Multitude a = Pair (Unit a) (Unit a)
+              | AddUnit (Unit a) (Multitude a)
 
 instance Show (Unit a) where
   show x = "x"
