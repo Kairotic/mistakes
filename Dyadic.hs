@@ -42,7 +42,7 @@ remaining _ _ = Nothing
 measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 -- measure x [] = Just []
 measure x y = do a <- remaining x y
-                 b <- remaining x a
+                 b <- measure x a
                  return (AddUnit Unit b)
 
 -- isPart l g = isJust (measure l g)
