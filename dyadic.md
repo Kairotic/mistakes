@@ -76,7 +76,7 @@ model greater numbers with additional units relative to that:
 
 ~~~~{.haskell .colourtex}
 data Multitude a = Pair (Unit a) (Unit a)
-    | AddUnit Unit Multitude
+    | AddUnit (Unit a) (Multitude a)
 ~~~~
 
 The number four would then be constructed with the following:
