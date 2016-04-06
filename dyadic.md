@@ -63,9 +63,7 @@ can think of a multitude as a list, which is denoted by putting the
 type Multitude a = [Unit a]
 ~~~~
 
-Note that the same type parameter is used in `Unit a` and `Multitude
-a`, which means that you for example can't mix `Sheep` and `Cow`s in
-the same multitude.
+Note that the same type parameter is used in `Unit a` and `Multitude a`, which means that you for example can't mix `Sheep` and `Cow`s in the same multitude.
 
 However again, the detail makes this a little bit complex. Firstly,
 such a list is allowed to be empty, whereas the number zero is not
