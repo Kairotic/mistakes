@@ -96,9 +96,7 @@ data Multitude a = Pair (Unit a) (Unit a)
 The number four would then be constructed with the following:
 
 ~~~~{.haskell .colourtex}
-white = Sheep "white"
-black = Sheep "black"
-AddUnit (Unit white) (AddUnit (Unit white) (Pair (Unit white) (Unit black)))
+AddUnit Unit (AddUnit Unit (Pair Unit Unit))
 ~~~~
 
 The number consists of white and black sheep, but together they are
