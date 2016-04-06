@@ -44,9 +44,14 @@ data Unit a = forall a. Unit
 As the `forall` suggests, the type `a` can represent any other type
 that we might define, such as `Sheep` or `Cow`. In practice this type
 parameter does nothing, apart from indicate that a `Unit` is thought
-about with reference to a concrete type of thing. For simplicity, we
-will continue with the simpler definition of `data Unit = Unit` as the
-basis of the rest of this section.
+about with reference to a concrete type of thing. So to model an unit
+of Cow, we could do the following:
+
+~~~~{.haskell .colourtex}
+data Cow = Cow {colour :: String}
+
+cow = Unit (Cow "brown")
+~~~~
 
 ## Definition 2: A number is a multitude composed of units.
 
@@ -55,7 +60,7 @@ can think of a multitude as a list, which is denoted by putting the
 `Unit` datatype in brackets:
 
 ~~~~{.haskell .colourtex}
-type Multitude = [Unit]
+type Multitude a = [Unit a]
 ~~~~
 
 However again, the detail makes this a little bit complex. Firstly,
