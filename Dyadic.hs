@@ -44,9 +44,9 @@ measureAgainst (AddUnit _ x) (AddUnit _ y) = measureAgainst x y
 measureAgainst (Pair _ _) (AddUnit _ (AddUnit _ x)) = Just x
 measureAgainst _ _ = Nothing
 
-remaining :: Multitude a -> Multitude a -> Multitude a
-remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
-remaining _ b = b
+-- remaining :: Multitude a -> Multitude a -> Multitude a
+-- remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
+-- remaining _ b = b
 
 
 
