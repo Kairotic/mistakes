@@ -64,3 +64,7 @@ represented by this definition. Indeed, neither is the number one -- a
 multitude begins with two, less than that is not considered to be a
 number.
 
+~~~~{.haskell .colourtex}
+data Multitude a = Pair (Unit a) (Unit a)
+              | AddUnit (Unit a) (Multitude a)
+~~~~
