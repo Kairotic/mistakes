@@ -18,6 +18,10 @@ data Multitude a = Pair (Unit a) (Unit a)
 instance Show (Unit a) where
   show x = "x"
 
+instance Show (Multitude a) where
+  show (Pair u u') = show u ++ show u'
+  show (AddUnit u n) = show u ++ show n
+
 -- instance Eq (Unit a)
 
 {-
