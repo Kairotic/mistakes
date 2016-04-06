@@ -8,7 +8,7 @@ import Data.Maybe
 {- Def. 1 A unit (monas) is that by virtue of which each of the things that
    exist is called one. -}
 
-data Unit a = forall a. Unit a
+data Unit a = forall a. Unit
 
 
 {- Def. 2 A number is a multitude composed of units. -}
