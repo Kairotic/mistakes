@@ -40,7 +40,7 @@ remaining (Pair _ _) (AddUnit _ (AddUnit _ x))  = Just x
 remaining _ _ = Nothing
 
 measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
-measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair _ _)
+measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair Unit Unit)
 measure x y = do a <- remaining x y
                  b <- measure x a
                  return (AddUnit Unit b)
