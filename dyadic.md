@@ -113,8 +113,11 @@ instance Show (Multitude a) where
   show (AddUnit u n) = show u ++ show n
 ~~~~{.haskell .colourtex}
 
-Then the number `four` is shown like this:
+Then the number `four` is shown like this (here the `> ` prefixes the
+expression `four`, and the result is shown below):
+
 ~~~~{.haskell .colourtex}
 > four
 xxxx
 ~~~~
+
