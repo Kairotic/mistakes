@@ -40,7 +40,7 @@ measure x y = do a <- measure' x y
                  b <- measure x a
                  return (AddUnit Unit b)
 
-measure' :: Multitude -> Multitude -> Maybe Multitude
+measure' :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measure' [] x = Just x
 measure' x [] = Nothing
 measure' x y = measure' (tail x) (tail y)
