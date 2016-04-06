@@ -60,8 +60,10 @@ but does not require a value when a Unit is being instantiated:
 ~~~~{.haskell .colourtex}
 data Unit a = forall a. Unit
 
+sheep :: Unit Sheep
 sheep = Unit
 ~~~~
+
 
 ## Definition 2: A number is a multitude composed of units.
 
