@@ -89,3 +89,4 @@ AddUnit (Unit white) (AddUnit (Unit white) (Pair (Unit white) (Unit black)))
 
 The number consists of white and black sheep, but together they are
 simply considered to be a `Multitude` of `Sheep`.
+
