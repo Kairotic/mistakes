@@ -17,6 +17,7 @@ data Multitude a = Pair (Unit a) (Unit a)
 
 instance Show (Unit a) where
   show x = "x"
+
 -- instance Eq (Unit a)
 
 {-
