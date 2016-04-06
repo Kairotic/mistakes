@@ -53,9 +53,9 @@ data Sheep = Sheep {colour :: String}
 sheep = Unit (Sheep "white")
 ~~~~
 
-However we are not interested in the identity of `Unit`s here, so we
-will use a definition which specifies a type parameter, but does not
-require a value when a Unit is being instantiated:
+However we are not interested in `Unit`s having a particular identity
+here, so we will use a definition which specifies a type parameter,
+but does not require a value when a Unit is being instantiated:
 
 ~~~~{.haskell .colourtex}
 data Unit a = forall a. Unit
