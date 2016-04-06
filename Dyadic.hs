@@ -38,7 +38,7 @@ measure :: Multitude -> Multitude -> Maybe Multitude
 measure x [] = Just []
 measure x y = do a <- measure' x y
                  b <- measure x a
-                 return (Unit:b)
+                 return (AddUnit Unit b)
 
 measure' :: Multitude -> Multitude -> Maybe Multitude
 measure' [] x = Just x
