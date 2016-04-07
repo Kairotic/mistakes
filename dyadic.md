@@ -150,8 +150,8 @@ We can define the equality operator `==` with the same approach:
 
 ~~~~{.haskell .colourtex}
 instance Eq (Multitude a) where
-  (Pair _ _) == (Pair _ _) = True
-  (Next _ a) == (Next _ b) = a == b
-  (_) == (_) = False
+  (==) (Pair _ _) (Pair _ _) = True
+  (==) (Next _ a) (Next _ b) = a == b
+  (==) _ _ = False
 ~~~~
 
