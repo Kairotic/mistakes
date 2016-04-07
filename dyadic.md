@@ -144,7 +144,7 @@ lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 ~~~~
 
-We can also define the equality operator:
+We can define the equality operator `==` in the same way:
 
 ~~~~{.haskell .colourtex}
 instance Eq (Multitude a) where
@@ -152,3 +152,4 @@ instance Eq (Multitude a) where
   (Next _ a) == (Next _ b) = a == b
   (_) == (_) = False
 ~~~~
+
