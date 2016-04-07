@@ -44,11 +44,16 @@ lesser (Pair _ _) (Next _ _) = True
 lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 
+greater a b = and [a /= b, not (lesser a b)]
 
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measureAgainst (Next _ x) (Next _ y) = measureAgainst x y
 measureAgainst (Pair _ _) (Next _ (Next _ x)) = Just x
 measureAgainst _ _ = Nothing
+
+measure :: Multitude a -> Multitude a -> Bool
+measure a b@ | less a b
+             | 
 
 -- remaining :: Multitude a -> Multitude a -> Multitude a
 -- remaining (Next _ x) (Next _ y) = remaining x y
