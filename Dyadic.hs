@@ -44,7 +44,7 @@ lesser (Pair _ _) (Next _ _) = True
 lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 
-greater a b = and [a /= b, not (lesser a b)]
+greater a b = lesser b a
 
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measureAgainst (Next _ x) (Next _ y) = measureAgainst x y
