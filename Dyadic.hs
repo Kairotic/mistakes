@@ -39,6 +39,12 @@ instance Eq (Multitude a) where
   (AddUnit _ a) == (AddUnit _ b) = a == b
   (_) == (_) = False
 
+lesser :: Multitude a -> Multitude a -> Bool
+lesser (Pair _ _) (AddUnit _ _) = True
+lesser (AddUnit _ a) (AddUnit _ b) = lesser a b
+lesser _ _ False
+
+
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measureAgainst (AddUnit _ x) (AddUnit _ y) = measureAgainst x y
 measureAgainst (Pair _ _) (AddUnit _ (AddUnit _ x)) = Just x
