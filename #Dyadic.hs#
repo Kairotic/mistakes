@@ -55,6 +55,7 @@ measure :: Multitude a -> Multitude a -> Bool
 measure a b | a == b = True
             | lesser a b = 
             | otherwise = False
+  where measurePart (Pair _ _) (Multitude _ _) = 
 
 -- remaining :: Multitude a -> Multitude a -> Multitude a
 -- remaining (Next _ x) (Next _ y) = remaining x y
