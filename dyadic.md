@@ -125,4 +125,4 @@ xxxx
    when it measures the greater -}
 
 This definition is a little more complex, and made particularly
-awkward by not the unit not being a number.
+awkward by not unit not being a number.
