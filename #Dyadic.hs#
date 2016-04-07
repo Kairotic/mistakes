@@ -60,7 +60,8 @@ measure a b = lesser a b && measure' a a
 remaining :: Multitude a -> Multitude a -> Multitude a
 remaining (Next _ x) (Next _ y) = remaining x y
 remaining _ b = b
-
+remaining a@(Pair _ _) (Next _ (Next _ (Pair _ _))) = a
+remaining 
           
 measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measure (Pair _ _) (Next _ (Next _ (Pair _ _))) = Just (Pair Unit Unit)
