@@ -13,7 +13,7 @@ data Unit a = forall a. Unit
 
 {- Def. 2 A number is a multitude composed of units. -}
 data Number a = Pair (Unit a) (Unit a)
-              | Multitude (Unit a) (Number a)
+              | Next (Unit a) (Number a)
 
 
 fromInt :: Integral a => a -> Multitude b
