@@ -144,4 +144,3 @@ lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 ~~~~
 
-
