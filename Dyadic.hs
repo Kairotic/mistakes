@@ -42,7 +42,7 @@ instance Eq (Multitude a) where
 lesser :: Multitude a -> Multitude a -> Bool
 lesser (Pair _ _) (AddUnit _ _) = True
 lesser (AddUnit _ a) (AddUnit _ b) = lesser a b
-lesser _ _ False
+lesser _ _ = False
 
 
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
