@@ -121,7 +121,9 @@ expression `four`, and the result is shown below):
 xxxx
 ~~~~
 
-Here is a handy function for turning integers into multitudes: 
+Here is a handy function for turning integers into multitudes, which
+first defines the conversion from `2`, and then the general case based
+upon that.
 
 ~~~~{.haskell .colourtex}
 fromInt 2 = Pair Unit Unit
