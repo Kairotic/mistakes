@@ -90,19 +90,19 @@ as a pair of units, and greater numbers relative to that:
 
 ~~~~{.haskell .colourtex}
 data Multitude a = Pair (Unit a) (Unit a)
-    | AddUnit (Unit a) (Multitude a)
+    | Next (Unit a) (Multitude a)
 ~~~~
 
 The number four would then be constructed with the following:
 
 ~~~~{.haskell .colourtex}
-four = AddUnit Unit (AddUnit Unit (Pair Unit Unit))
+four = Next Unit (Next Unit (Pair Unit Unit))
 ~~~~
 
 It would be nice if we could 'see' this multitude more clearly.  We
 can visualise it by telling Haskell to show a `Unit` with an `x` and
 by stringing together the units across instances of `Pair` and
-`AddUnit`:
+`Next`:
 
 ~~~~{.haskell .colourtex}
 instance Show (Unit a) where
@@ -110,7 +110,7 @@ instance Show (Unit a) where
 
 instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
-  show (AddUnit u n) = show u ++ show n
+  show (Next u n) = show u ++ show n
 ~~~~{.haskell .colourtex}
 
 Then the number `four` is shown like this (here the `> ` prefixes the
@@ -129,8 +129,8 @@ unit not being a number.
 
 ~~~~{.haskell .colourtex}
 lesser :: Multitude a -> Multitude a -> Bool
-lesser (Pair _ _) (AddUnit _ _) = True
-lesser (AddUnit _ a) (AddUnit _ b) = lesser a b
+lesser (Pair _ _) (Next _ _) = True
+lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 ~~~~
 
