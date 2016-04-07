@@ -51,8 +51,13 @@ measureAgainst (Next _ x) (Next _ y) = measureAgainst x y
 measureAgainst (Pair _ _) (Next _ (Next _ x)) = Just x
 measureAgainst _ _ = Nothing
 
+(+) a (pair u u') = Next u (Next u' m)
+
+
 measure :: Multitude a -> Multitude a -> 
-measure a b = greater a b = False
+measure a b = lesser a b && measure' a a b
+  where measure' a a  b
+
 
 
 
