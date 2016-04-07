@@ -34,10 +34,7 @@ instance Show (Multitude a) where
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-instance Eq (Multitude a) -- where
---  (Pair _ _) == (Pair _ _) = True
---  (Next _ a) == (Next _ b) = a == b
---  (_) == (_) = False
+instance Eq (Multitude a)
 
 lesser :: Multitude a -> Multitude a -> Bool
 lesser (Pair _ _) (Next _ _) = True
