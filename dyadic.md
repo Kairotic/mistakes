@@ -121,6 +121,15 @@ expression `four`, and the result is shown below):
 xxxx
 ~~~~
 
+Here is a handy function for turning integers into multitudes: 
+
+~~~~{.haskell .colourtex}
+fromInt :: Integral a => a -> Multitude b
+fromInt 2 = Pair Unit Unit
+fromInt n | n < 2 = error "There are no multitudes < 2"
+          | otherwise = Next Unit $ fromInt (n-1)
+~~~~
+
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
