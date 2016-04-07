@@ -146,7 +146,7 @@ lesser _ _ = False
 greater a b = lesser b a
 ~~~~
 
-We can define the equality operator `==` in the same way:
+We can define the equality operator `==` in much the same way:
 
 ~~~~{.haskell .colourtex}
 instance Eq (Multitude a) where
