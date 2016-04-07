@@ -55,12 +55,11 @@ measureAgainst _ _ = Nothing
 (+) a (Next u b) = (Next u a) b
 
 measure :: Multitude a -> Multitude a -> 
-measure a b = lesser a b && measure' a a b
-  where measure' a a  b
+measure a b = lesser a b && measure' a a 
 
-
-
-
+remaining :: Multitude a -> Multitude a -> Multitude a
+remaining (Next _ a) (Next _ b) = remaining x y
+remaining a@(Pair _ _) (Next _ (Next _ (Pair _ _))) = a
           
 measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measure (Pair _ _) (Next _ (Next _ (Pair _ _))) = Just (Pair Unit Unit)
@@ -68,9 +67,6 @@ measure x y = do a <- remaining x y
                  b <- measure x a
                  return (Next Unit b)
 
--- remaining :: Multitude a -> Multitude a -> Multitude a
--- remaining (Next _ x) (Next _ y) = remaining x y
--- remaining _ b = b
 
 in other words, a number a is part of another number b if there exists some number n such that n a = b
 
