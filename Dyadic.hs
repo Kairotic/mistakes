@@ -48,8 +48,6 @@ measureAgainst _ _ = Nothing
 -- remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
 -- remaining _ b = b
 
-
-
 --measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
 --measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair Unit Unit)
 --measure x y = do a <- remaining x y
