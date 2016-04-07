@@ -125,4 +125,4 @@ xxxx
    when it measures the greater -}
 
 This definition is a little more complex, and made particularly
-awkward by the lack of the number one.
+awkward by not having the number one.
