@@ -23,7 +23,7 @@ fromInt n | n < 2 = error "There are no numbers < 2"
 
 instance Show (Unit a) where
   show x = "x"
-a
+
 instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
   show (Next u n) = show u ++ show n
