@@ -86,7 +86,7 @@ multitude begins with two, less than that is not considered to be a
 number.
 
 A way around this is to define a multitude relative to the number two,
-as a pair of units,:
+as a pair of units:
 
 ~~~~{.haskell .colourtex}
 data Multitude a = Pair (Unit a) (Unit a)
