@@ -52,8 +52,8 @@ measureAgainst (Pair _ _) (Next _ (Next _ x)) = Just x
 measureAgainst _ _ = Nothing
 
 measure :: Multitude a -> Multitude a -> Bool
-measure a b@ | less a b
-             | 
+measure a b@ | lesser a b
+             | otherwise = False
 
 -- remaining :: Multitude a -> Multitude a -> Multitude a
 -- remaining (Next _ x) (Next _ y) = remaining x y
