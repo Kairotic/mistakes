@@ -142,6 +142,8 @@ otherwise false:
 lesser (Pair _ _) (Next _ _) = True
 lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
+
+greater a b = lesser b a
 ~~~~
 
 We can define the equality operator `==` in the same way:
