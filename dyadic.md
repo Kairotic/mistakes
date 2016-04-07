@@ -132,8 +132,8 @@ fromInt n | n < 2 = error "There are no multitudes < 2"
 
 ## Definition 3. A number is a part of a number, the less of the greater, when it measures the greater
 
-Definition 3 is a little more complex, and made awkward by a single
-unit not being a number.
+Definition 3 is a little more complex, and made awkward to express by
+a single unit not being a number.
 
 ~~~~{.haskell .colourtex}
 lesser :: Multitude a -> Multitude a -> Bool
