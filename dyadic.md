@@ -124,8 +124,8 @@ xxxx
 {- Def 3. A number is a part of a number, the less of the greater,
    when it measures the greater -}
 
-This definition is a little more complex, and made particularly
-awkward by a single unit not being a number.
+This definition is a little more complex, and made awkward by a single
+unit not being a number.
 
 ~~~~{.haskell .colourtex}
 lesser :: Multitude a -> Multitude a -> Bool
