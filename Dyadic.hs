@@ -19,14 +19,14 @@ data Number a = Pair (Unit a) (Unit a)
 fromInt :: Integral a => a -> Multitude b
 fromInt 2 = Pair Unit Unit
 fromInt n | n < 2 = error "There are no numbers < 2"
-          | otherwise = AddUnit Unit $ fromInt (n-1)
+          | otherwise = Next Unit $ fromInt (n-1)
 
 instance Show (Unit a) where
   show x = "x"
 
 instance Show (Multitude a) where
   show (Pair u u') = show u ++ show u'
-  show (AddUnit u n) = show u ++ show n
+  show (Next u n) = show u ++ show n
 
 
 -- instance Eq (Unit a)
@@ -36,29 +36,29 @@ instance Show (Multitude a) where
 
 instance Eq (Multitude a) where
   (Pair _ _) == (Pair _ _) = True
-  (AddUnit _ a) == (AddUnit _ b) = a == b
+  (Next _ a) == (Next _ b) = a == b
   (_) == (_) = False
 
 lesser :: Multitude a -> Multitude a -> Bool
-lesser (Pair _ _) (AddUnit _ _) = True
-lesser (AddUnit _ a) (AddUnit _ b) = lesser a b
+lesser (Pair _ _) (Next _ _) = True
+lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 
 
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
-measureAgainst (AddUnit _ x) (AddUnit _ y) = measureAgainst x y
-measureAgainst (Pair _ _) (AddUnit _ (AddUnit _ x)) = Just x
+measureAgainst (Next _ x) (Next _ y) = measureAgainst x y
+measureAgainst (Pair _ _) (Next _ (Next _ x)) = Just x
 measureAgainst _ _ = Nothing
 
 -- remaining :: Multitude a -> Multitude a -> Multitude a
--- remaining (AddUnit _ x) (AddUnit _ y) = remaining x y
+-- remaining (Next _ x) (Next _ y) = remaining x y
 -- remaining _ b = b
 
 --measure :: Multitude a -> Multitude a -> Maybe (Multitude a)
---measure (Pair _ _) (AddUnit _ (AddUnit _ (Pair _ _))) = Just (Pair Unit Unit)
+--measure (Pair _ _) (Next _ (Next _ (Pair _ _))) = Just (Pair Unit Unit)
 --measure x y = do a <- remaining x y
 --                 b <- measure x a
---                 return (AddUnit Unit b)
+--                 return (Next Unit b)
 
 -- isPart l g = isJust (measure l g)
 
@@ -108,6 +108,6 @@ addUnit = (Unit:)
 fromInt :: Integral a => a -> Multitude b
 fromInt 2 = Pair Unit Unit
 fromInt n | n < 2 = error "There are no numbers < 2"
-          | otherwise = AddUnit Unit $ fromInt (n-1)
+          | otherwise = Next Unit $ fromInt (n-1)
 -}
 -}
