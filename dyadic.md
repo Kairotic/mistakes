@@ -127,10 +127,11 @@ xxxx
 This definition is a little more complex, and made particularly
 awkward by a single unit not being a number.
 
-
 ~~~~{.haskell .colourtex}
 lesser :: Multitude a -> Multitude a -> Bool
 lesser (Pair _ _) (AddUnit _ _) = True
 lesser (AddUnit _ a) (AddUnit _ b) = lesser a b
 lesser _ _ = False
 ~~~~
+
+
