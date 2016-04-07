@@ -136,7 +136,7 @@ fromInt n | n < 2 = error "There are no multitudes < 2"
 Definition 3 is a little more complex, and because a single unit is
 not a number, awkward to express in contemporary programming
 languages. Lets begin by defining the cases where `lesser` is true, or
-otherwise false:
+otherwise false, and `greater` relative to that:
 
 ~~~~{.haskell .colourtex}
 lesser (Pair _ _) (Next _ _) = True
