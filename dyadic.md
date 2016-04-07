@@ -86,11 +86,11 @@ multitude begins with two, less than that is not considered to be a
 number.
 
 A way around this is to define a multitude relative to the number two,
-as a pair of units, and greater numbers relative to that:
+as a pair of units,:
 
 ~~~~{.haskell .colourtex}
 data Multitude a = Pair (Unit a) (Unit a)
-    | Next (Unit a) (Multitude a)
+	| Next (Unit a) (Multitude a)
 ~~~~
 
 The number four would then be constructed with the following:
