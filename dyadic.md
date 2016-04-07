@@ -124,7 +124,6 @@ xxxx
 Here is a handy function for turning integers into multitudes: 
 
 ~~~~{.haskell .colourtex}
-fromInt :: Integral a => a -> Multitude b
 fromInt 2 = Pair Unit Unit
 fromInt n | n < 2 = error "There are no multitudes < 2"
           | otherwise = Next Unit $ fromInt (n-1)
