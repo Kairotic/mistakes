@@ -144,3 +144,11 @@ lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 ~~~~
 
+We can also define the equality operator:
+
+~~~~{.haskell .colourtex}
+instance Eq (Multitude a) where
+  (Pair _ _) == (Pair _ _) = True
+  (Next _ a) == (Next _ b) = a == b
+  (_) == (_) = False
+~~~~
