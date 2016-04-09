@@ -96,11 +96,18 @@ When weaving, we follow the same sequence for the weft threads:
 
 ![](figures/IMAG0378-2.jpg)
 
-This technique draws comparisons with Jacquard looms, but obviously it’s
-far simpler as the weave itself is the same, we are only changing
-between 2 colours (and a human is very much required to do the weaving
-in this case). 
+The idea of this technique was twofold, firstly to begin to understand
+weaving by modelling plain weave, and confirming a hypothesis by
+following instructions produced by the language by actually weaving
+them.
 
-Failures: 
-- no kernel matrix
-- no selvedge
+The other aspect was to use a generative formal grammar to explore the
+patterns possible given the restriction of plain weave, perhaps in a
+different manner to that used by weavers - but one that starts to treat
+weaving as a computational medium.
+
+This system was restricted by only working with plain weave, although
+given the range of patterns possible, this didn't seem too much of a
+problem. What was more problematic was the abstract nature of the
+symbols and text modelling, in future developments we addressed both of
+these issues.
