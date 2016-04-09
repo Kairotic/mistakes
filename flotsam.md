@@ -2,11 +2,10 @@
 
 Flotsam is a prototype screenless tangible programming language largely
 built from driftwood. It is a declarative style L system for describing
-weave structure and pattern with yarn width and colour. The LEDs
-indicate that the evaluation happens simultaneously, as this is a
-functional language. The blocks represent blue and pink yarn in two
-widths, with rules to produce the warp/weft sequence based on the rows
-the blocks are positioned on:
+weave structure and pattern with yarn width and colour. It uses physical
+blocks that represent blue and pink yarn in two widths, with rules to
+produce a warp/weft yarn sequence based on the rows the blocks are
+plugged into on a custom interface:
 
 ![](figures/flotsam.jpg)
 

@@ -5,10 +5,13 @@ with sequences of colour it can produce many different types of pattern.
 
 Some of these patterns when combined with muted colours, have in the
 past been used as a type of camouflage – and are classified into
-District Checks[] for use in hunting in Lowland Scotland. 
+District Checks [citation needed] for use in hunting in Lowland
+Scotland.
 
-A few lines of Scheme calculate and print the colours of an arbitrarily
-sized weave, by using lists of warp and weft as input.
+The first weaving codes prototype I made was during the Mathematickal
+Arts workshop at FoAM Brussels [citation needed]. A few lines of Scheme
+calculate and print the colours of an arbitrarily sized plain weave, by
+using lists of warp and weft yarn as input.
 
     ; return warp or weft, dependant on the position
     (define (stitch x y warp weft)
@@ -25,8 +28,10 @@ sized weave, by using lists of warp and weft as input.
                              (list-ref weft x))))
        (newline)))
 
-We can visualising the weaves with single characters representing
-colours for ascii previewing, here are some examples:
+We visualised the weaves with single characters representing colours for
+ascii text previewing, here are some examples:
+
+Warp and weft all the same colour:
 
 `(weave '(O O O O O O O) '(: : : : : : : : :))`
 
@@ -40,6 +45,8 @@ colours for ascii previewing, here are some examples:
      : O : O : O :
      O : O : O : O
 
+2:2 alternating colour with an offset:
+
 `(weave '(O O : : O O : : O O) '(O : : O O : : O O :))`
 
      : O : : : O : : : O
@@ -52,18 +59,40 @@ colours for ascii previewing, here are some examples:
      O O : O O O : O O O
      : O : : : O : : : O
 
-This looked quite promising as ascii art, but I didn’t really know how
-it would translate into a textile. I also wanted to look into ways of
+This looked quite promising as ascii art, but we didn’t really know how
+it would translate into a textile. We also wanted to look into ways of
 generating new patterns algorithmically, using formal grammars. The idea
 is that you begin with an axiom, or starting state, and do a 'search
 replace' on it repeatedly following one or more simple rules:
 
-Axiom: O
-Rule 1: O => O : O :
-Rule 2: : => : O :
-Run for 3 generations
+    Axiom: O
+    Rule 1: O => O : O :
+    Rule 2: : => : O :
+
+So we begin with the axiom:
+
+    O
+
+Then run rule one on it - replacing `O` with `O : O :`
+
+    O : O :
+
+Then run rule two, replacing `:` with `: O :`:
+
+    O : O : O : O :
+
+And repeat both these steps one more time:
+
+    O : O : O : O : : O : O : O : O : O : : O : O : O : O : O : : O : O : O : O : O : : O :
+
+The pattern grows like a cellular or plant structure - this technique
+was first developed for modelling plant growth.
+
+We run the rules one more time, then read off the pattern replacing `O` for red and `:` as orange to warp a frame loom:
 
 ![](figures/IMAG0376.jpg)
+
+When weaving, we follow the same sequence for the weft threads:
 
 ![](figures/IMAG0378-2.jpg)
 
