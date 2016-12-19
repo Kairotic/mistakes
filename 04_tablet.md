@@ -1,14 +1,14 @@
-
 # tablet weaving simulation
 
 Tablet weaving is an ancient form of pattern production using cards
-which are rotated to provide different sheds between warp threads. It’s
-used to produce long strips of fabric, or the starting bands and borders
-that form part of a larger warp weighted weaving. 
+which are rotated to provide different sheds between warp
+threads. It’s used to produce long strips of fabric, and the starting
+bands and borders that form part of a larger warp weighted weaving.
 
-Tablet weaving is extremely complex, so we devised a language/notation
-for understanding it better. This language can be used either to drive a
-simulation, or can be followed when weaving.
+Tablet weaving is extremely complex, so in a similar manner to the 4
+shaft loom, we devised a language/notation for understanding it
+better. In the same way as before, this language can be used either to
+drive a simulation, or can be followed when weaving.
 
 The language consists of simple instructions, for example:
 
@@ -16,16 +16,16 @@ The language consists of simple instructions, for example:
 
 ![](figures/forward16.png)
 
-The card rotations are shown on the left for each of the 8 cards in this
-case, the predicted weaving is on the right for the top and bottom of
-the fabric. This is setup with a double face weaving on square cards, so
+The card rotations are shown on the left for each of the 8 cards, the
+predicted weaving is on the right for the top and bottom of the
+fabric. This is setup with a double face weave on square cards, so
 black, black, white, white in clockwise from the top right
 corner. `(weave-forward 16)` turns all the cards a quarter turn, adds
 one weft and repeats this 16 times.
 
 We can offset the cards from each other first to make a
-pattern. `rotate-forward` turns only the specified cards a quarter turn
-forward without weaving a weft (`rotate-back` also works):
+pattern. `rotate-forward` turns only the specified cards a quarter
+turn forward without weaving a weft:
 
     (rotate-forward 0 1 2 3 4 5)
     (rotate-forward 0 1 2 3)
@@ -35,9 +35,9 @@ forward without weaving a weft (`rotate-back` also works):
 ![](figures/diagonal.png)
 
 One interesting limiation of tablet weaving is that We can’t really
-weave 32 forward quarter rotates without completely twisting up the warp
-so we need to go forward/back 8 instead to make something physically
-weavable:
+weave 32 forward quarter rotates without completely twisting up the
+warp so we need to go forward/back 8 instead to make something
+physically weavable:
 
     (rotate-forward 0 1 2 3 4 5)
     (rotate-forward 0 1 2 3)
@@ -63,10 +63,11 @@ Now we get a zigzag – if we change the starting pattern again:
 
 ![](figures/zigzag2.png)
 
-This zigzag matches the stitch direction better. Instead of the rotation
-offsets we can also use twist to form other patterns. The `twist`
-command takes a list of cards to twist, and results in these cards
-effectively reversing their turn direction compared to the others.
+This zigzag matches the stitch direction better. Instead of the
+rotation offsets we can also use twist to form other patterns. The
+`twist` command takes a list of cards to twist, and results in these
+cards effectively reversing their turn direction compared to the
+others.
 
     (weave-forward 7)
     (twist 0 1 2 3)
@@ -89,9 +90,9 @@ effectively reversing their turn direction compared to the others.
 
 ![](figures/mip.png)
 
-With double faces weave, the twist needs to happen when the cards are in
-the right rotation – if we repeat this example, but change the first
-`(weave-forward 7)` to `(weave-forward 6)` we get this instead:
+With double faced weave, the twist needs to happen when the cards are
+in the right rotation – if we repeat this example, but change the
+first `(weave-forward 7)` to `(weave-forward 6)` we get this instead:
 
 ![](figures/miperror.png)
 
@@ -111,13 +112,14 @@ this was created by following the program manually.
    
 This language was the first we created that describes the actions and
 movement of the weaver. It was mainly of use in understanding the
-complexities of tablet weaving, indeed some of this remains a mystery -
-the calculation of the inverse side of the weaving is not correct,
+complexities of tablet weaving, indeed some of this remains a mystery
+- the calculation of the inverse side of the weaving is not correct,
 problably due to the double twining of the weave. In some cases it has
-very different results, in others it matches perfectly.
+very different results, in others it matches perfectly. Further
+experimentation is needed.
 
-This langauge also started investigations into combining the tablet and
-warp weighted weaving techniques into a single notation system. This
-remains a challenge, but pointed in the direction of a more general
-approach being required - rather than eigther a loom centred or weaver
-centred view.
+This langauge also started investigations into combining the tablet
+and warp weighted weaving techniques into a single notation
+system. This remains a challenge, but pointed in the direction of a
+more general approach being required - rather than either a loom
+centred or weaver centred view.
