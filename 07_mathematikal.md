@@ -1,7 +1,7 @@
 # Understanding plain weave 
 
 Our initial attempt at reaching an understanding of the complexities
- of weaving predated the WeavingCodes:CodingWeaves project and took
+ of weaving predated the WeavingCodes project and took
  place during the Mathematickal arts workshop
  [http://fo.am/mathematickal_arts/] at Foam Brussels in 2011. This
  workshop, with Tim Boykett and textile designer and educator Carole

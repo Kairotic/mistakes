@@ -34,7 +34,7 @@ turn forward without weaving a weft:
 
 ![](figures/diagonal.png)
 
-One interesting limiation of tablet weaving is that We can’t really
+One interesting limitation of tablet weaving is that We can’t really
 weave 32 forward quarter rotates without completely twisting up the
 warp so we need to go forward/back 8 instead to make something
 physically weavable:
@@ -114,11 +114,11 @@ This language was the first we created that describes the actions and
 movement of the weaver. It was mainly of use in understanding the
 complexities of tablet weaving, indeed some of this remains a mystery
 - the calculation of the inverse side of the weaving is not correct,
-problably due to the double twining of the weave. In some cases it has
+probably due to the double twining of the weave. In some cases it has
 very different results, in others it matches perfectly. Further
 experimentation is needed.
 
-This langauge also started investigations into combining the tablet
+This language also started investigations into combining the tablet
 and warp weighted weaving techniques into a single notation
 system. This remains a challenge, but pointed in the direction of a
 more general approach being required - rather than either a loom

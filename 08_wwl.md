@@ -1,10 +1,10 @@
 # Pattern matrix warp weighted loom simulation
 
-One of the main objectives of the weavecoding project was to provide a
+One of the main objectives of the WeaveCoding project was to provide a
 simulation of the warp weighted loom to use in demonstrations in order
-to explore ancient weaving techniques. Beyond the previous weavecoding
-simulations we needed to show the actual weaving process, rather than
-the end result, in order to explain how the structures and patterns
+to explore ancient weaving techniques. Beyond our previous simulations
+we needed to show the actual weaving process, rather than the end
+result, in order to explain how the structures and patterns
 emerge. Weaving is very much a 3 dimensional process and our previous
 visualisations failed to show this well.
 

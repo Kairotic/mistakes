@@ -1,4 +1,3 @@
-
 # Four shaft loom simulation
 
 The four shaft loom simulation inverts most weaving simulation
@@ -75,7 +74,7 @@ cause the pattern to distort further when the fabric is removed from
 the loom and the tension is gone. The extent to which it is possible
 or desirable to include these material limitations into a weaving
 language or model was one of our main topics of inquiry when talking
-to our advisors [Leslie], as well as the inability of even the highest
+to our advisers [Leslie], as well as the inability of even the highest
 range simulation software to do this fully.
 
 In total there were three types of limitations noted. One is the

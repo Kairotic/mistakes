@@ -6,13 +6,12 @@ the same category as technology that involves combinations of discreet
 voltages - the digital tools many of us use daily in our lives at
 present. When we do this we see many differences between the design of
 these tools, how we interact with them, and their relationship to our
-bodies. One of the important strands of research on the
-WeavingCodes:CodingWeaves project turned out to be looking for how the
-design of weaving tools, having been honed over a long period of time
-- can inform the design of programming tools and help us with some of
-their limitations.
+bodies. One of the important strands of research on the WeavingCodes
+project turned out to be looking for how the design of weaving tools,
+having been honed over a long period of time - can inform the design
+of programming tools and help us with some of their limitations.
 
-Flotsam is a prototype screenless tangible programming language
+Flotsam is a prototype screen-less tangible programming language
 largely built from driftwood. It was constructed in order to
 experiment with new types of "tangible hardware" for teaching children
 programming without the need for a screen. It is based on the same L
@@ -45,14 +44,14 @@ and interfaces for understanding how weavers think, and this was a
 markedly different approach - so proved challenging for this aim.
 
 The design of the system itself needed further development, as the
-plugs were tricky to position correctly - particually for small
+plugs were tricky to position correctly - particularly for small
 fingers.
 
-However, during use we observered the findings of ["Comparing the Use
+However, during use we observed the findings of ["Comparing the Use
 of Tangible and Graphical Programming Languages for Informal Science
 Education":
 http://cci.drexel.edu/faculty/esolovey/papers/chi09.horn.pdf] in that
-the tangible interace encouraged collaborative learning beyond that
+the tangible interface encouraged collaborative learning beyond that
 possible with a traditional keyboard and screen interface designed for
 a single user. 
 
