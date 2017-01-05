@@ -16,7 +16,7 @@ experimental hardware.
 
 ![](figures/pm1.jpg)
 
-After out experience with Flotsam, we needed to explore tangible
+After our experience with Flotsam, we needed to explore tangible
 programming further. The pattern matrix was the next step, specialised
 for weaving and built by Makernow [http://www.makernow.co.uk/] and
 FoAM Kernow as Open Hardware initially for use in an extra care
@@ -80,11 +80,6 @@ Vertical flip - decimal values: 0,4,5,6
 
     - -   - -   + -   - + 
     - -   - +   - +   - +
-
-Here was the design for the sensor PCB that contained the hall effect
-sensors under each programming block.
-
-![](figures/hallboard.png)
 
 A member of staff at Miners Court trying the first ever working
 version of the tangible weavecoding - in this case the Raspberry Pi
