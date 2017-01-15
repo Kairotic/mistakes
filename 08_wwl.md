@@ -18,14 +18,15 @@ experimental hardware.
 
 After our experience with Flotsam, we needed to explore tangible
 programming further. The pattern matrix was the next step, specialised
-for weaving and built by Makernow [http://www.makernow.co.uk/] and
-FoAM Kernow as Open Hardware initially for use in an extra care
-housing scheme in Redruth, Cornwall alongside other crafts and
-technology workshops as part of the Future Thinking for Social
-Living[http://ft4sl.tumblr.com/] project with Falmouth University. We
-then tested and developed it further in a museum exhibition setting
-during a residency at Munich’s Museum für Abgüsse Klassischer
-Bildwerke (Museum of Casts of Classical Sculpture).
+for weaving and built by Makernow [http://www.makernow.co.uk/] [Oliver
+Hatfield, Andrew Smith, Justin Marshall] and FoAM Kernow as Open
+Hardware initially for use in an extra care housing scheme in Redruth,
+Cornwall alongside other crafts and technology workshops as part of
+the Future Thinking for Social Living[http://ft4sl.tumblr.com/]
+project with Falmouth University. We then tested and developed it
+further in a museum exhibition setting during a residency at Munich’s
+Museum für Abgüsse Klassischer Bildwerke (Museum of Casts of Classical
+Sculpture).
 
 A primary objective of this prototype was to remove the need for
 physical plugs, which proved problematic as it took people time to
