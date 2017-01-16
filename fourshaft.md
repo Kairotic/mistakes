@@ -1,18 +1,23 @@
 # Four shaft loom simulation
 
-The four shaft loom simulation inverts most weaving simulation
-concepts. Because we need to gain knowledge about the potential
-computational processes involved in weaving - we need to deeply
-understand how a loom works. So instead of defining the pattern you
-want directly, and then being given instructions for how to weave it,
-with this simulation you describe the set up of a specific loom first,
-and it tells you what patterns emerge. 
+Our four shaft loom simulation takes a different approach to that of
+most weaving simulation software. One of our core aims is to gain
+knowledge about the computational processes involved in weaving, and
+so need to gain deep understanding of how a loom works. In much
+contemporary weaving software, you 'draw' a two-dimensional image, and
+the software then generates instructions for how it may be woven.
+However our simulation does almost the exact inverse - you describe
+the set up of the loom first, and it tells you what visual patterns
+result. Our latter approach brings the three-dimensional structure of
+a weave to the fore, allowing us to investigate the complex
+interference patterns of warp and weft, only considering the visual
+result in terms of the underlying structure it arises from.
 
-This involved writing a model that needed to include calculating the
-shed (the gap between ordered warp thread) by looking at each shaft in
-turn and using an "OR" operation on each warp thread to calculate
-which ones are picked up. This really turns out to be the core of the
-algorithm – here’s a snippet:
+Our model of a four-shaft loom calculates the *shed* (the gap between
+ordered warp threads), processing each shaft in turn and using a
+logical "OR" operation on each warp thread to calculate which ones are
+picked up. This turns out to be the core of the algorithm -- an
+excerpt of which is shown below:
 
     ;; 'or's two lists together:
     ;; (list-or (list 0 1 1 0) (list 0 0 1 1)) => (list 0 1 1 1)
@@ -31,63 +36,70 @@ algorithm – here’s a snippet:
        (build-list (length (car (loom-heddles l))) (lambda (a) 0))
        (loom-heddles-raised l lift-counter)))
 
-This program is good for understanding how the loom setup corresponds
-to the patterns it produces, and is much easier to tweak, experiment
-and play with than a real loom which would need re-warping. Here are
-some example weaves. Colour wise, in all these examples the order is
-fixed – both the warp and the weft alternate light/dark yarns.
+This code provides understanding of how the warping of a loom
+corresponds to the patterns it produces, and may be quickly
+experimented and played with in a way that is not possible on a
+physical loom which would require time consuming re-warping with each
+change. Here follow some example weaves. Colour wise, in all these
+examples the order is fixed – both the warp and the weft alternate
+light/dark yarns.
 
-![](figures/boxy.png)
+![Figure 3: The interface for our four shaft loom simulation, showing heddles (above), lift plan (to the right) and simulated weave.](figures/03-boxy.png)
 
-The next step was to try weaving the structures with real threads in
-order to test the patterns produced were correct. A frame loom was
-constructed to weave these patterns.
+As with testing our understanding of plain weave as described in the
+previous section, our next step was to try weaving the structures with
+a real loom and threads, in order to test the patterns produced were
+correct. A frame loom was constructed to weave these patterns, shown
+in Figure 4. Here the shafts are sleyed to pick up the warp as defined
+by the simulation's input (the checkboxes) seen in Fig. 3). The
+threads (which form heddles) are tied on to wooden poles which are
+pulled in different combinations during weaving. This is a similar
+approach as that used in warp weighted looms, much faster than
+counting threads manually each time. It is important to use thinner
+threads than the warp for the heddles, but as they are put under
+tension during the weaving process they do need to be
+strong. Fittingly for this project, configuring the warp with heddles
+felt very much like coding threads, with threads.
 
-![](figures/frame-loom.jpg)
+![Figure 4: Frame loom constructed to test the four shaft loom simulation.](figures/04-frame-loom.jpg)
 
-Here the shafts are sleyed to pick up the warp as defined by the
-simulation's input (the toggle buttons). The threads (which form
-heddles) are tied on to wooden poles which are pulled in different
-combinations during weaving. This is a similar approach as used in
-warp weighted looms and much faster than counting threads manually
-each time. It’s important to use thinner threads than the warp, but
-you need to put quite a bit of tension on them so they need to be
-strong. There is something very appropriate in the context of this
-project about coding threads with threads in this way.
+Often a form of improvisation is required when weaving, even when
+using a predefined pattern. There is a lot of reasoning required in
+response to issues of structure that cannot be defined ahead of
+time. You need to respond to the interactions of the materials and the
+loom itself. The most obvious problem you need to think about and
+solve ‘live’ as you go, is the selvedge – the edges of the fabric. In
+order to keep the weave from falling apart you need to ‘tweak’ the
+first and last warp thread based on which weft yarn colour thread you
+are using. The different weft threads also need to go over/under each
+other in a suitable manner which interacts with this.
 
-In relation to livecoding, a form of improvisation is required when
-weaving, even when using a predefined pattern. There is a lot of
-reasoning required in response to issues of structure that cannot be
-defined ahead of time. You need to respond to the interactions of the
-materials and the loom itself. The most obvious problem you need to
-think about and solve ‘live’ as you go, is the selvedge – the edges of
-the fabric. In order to keep the weave from falling apart you need to
-‘tweak’ the first and last warp thread based on which weft yarn colour
-thread you are using. The different weft threads also need to go
-over/under each other in a suitable manner which interacts with this.
+In relation to computer programming, this improvisation at the loom is
+analogous to *live coding*, where code is written 'on the fly', often
+as a performing art such as music making. See Emma Cocker's article in
+the present issue of Textile for deep investigation into the relation
+between between live weaving and live coding.
 
-![](figures/comp.jpg)
+![](figures/05-meander.jpg)
 
-Here’s a closeup of the meander pattern compared to the
-simulation. The differences are due to the long float threads, which
-cause the pattern to distort further when the fabric is removed from
-the loom and the tension is gone. The extent to which it is possible
-or desirable to include these material limitations into a weaving
-language or model was one of our main topics of inquiry when talking
-to our advisers [Leslie], as well as the inability of even the highest
-range simulation software to do this fully.
+Figure 5 shows close-ups of the simulated *meander* pattern and its
+actual weave. The differences are due to the behaviour of the long
+'floating' threads, and the pattern is distorted further when the
+fabric is removed from the loom and the tension is lost. The extent to
+which it is possible, or even desirable to include such material
+limitations into a weaving language or model was one of our main
+topics of inquiry when talking to our advisers (particularly esteemed
+industrial weaver Leslie Downes). Through discussion, we came to
+understand that simulating such physical interaction between threads
+is beyond even the even the most expensive simulation software.
 
-In total there were three types of limitations noted. One is the
-selvedge, the lack of which in weaving simulations, models and
-notation systems was mentioned earlier – another is floats as seen
-here.
+We have already mentioned two aspects of weaving which do not feature
+in weaving software; the structure of selvedge, and the behaviour of
+floats. We also noted a third, more subtle limitation: some sequences
+of sheds cause problems when packing down the weft, for example if you
+are not too careful you can cause the neat ordering of the weft
+colours to be disrupted in some situations, where in practice they
+overlap.
 
-The third is more subtle: some sequences of sheds cause problems when
-packing down the weft, for example if you are not too careful you can
-cause the ordering of the weft colours to be disrupted in some
-situations when they can overlap.
-
-This was a step in the right direction, as the model represents
-weaving via the shed operation rather than a cellular matrix, it
-brings it closer to a continuous form.
+[//]: # Don't understand this bit, taken it out for now: This was a step in the right direction, as the model represents weaving via the shed operation rather than a cellular matrix, it brings it closer to a continuous form.
  
