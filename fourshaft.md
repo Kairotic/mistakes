@@ -44,7 +44,7 @@ change. Here follow some example weaves. Colour wise, in all these
 examples the order is fixed – both the warp and the weft alternate
 light/dark yarns.
 
-![Figure 3: The interface for our four shaft loom simulation, showing heddles (above), lift plan (to the right) and simulated weave.](figures/03-boxy.png)
+![The interface for our four shaft loom simulation, showing heddles (above), lift plan (to the right) and simulated weave.](figures/03-boxy.png)
 
 As with testing our understanding of plain weave as described in the
 previous section, our next step was to try weaving the structures with
@@ -61,7 +61,7 @@ tension during the weaving process they do need to be
 strong. Fittingly for this project, configuring the warp with heddles
 felt very much like coding threads, with threads.
 
-![Figure 4: Frame loom constructed to test the four shaft loom simulation.](figures/04-frame-loom.jpg)
+![Frame loom constructed to test the four shaft loom simulation.](figures/04-frame-loom.jpg)
 
 Often a form of improvisation is required when weaving, even when
 using a predefined pattern. There is a lot of reasoning required in
@@ -80,18 +80,19 @@ as a performing art such as music making. See Emma Cocker's article in
 the present issue of Textile for deep investigation into the relation
 between between live weaving and live coding.
 
-![](figures/05-meander.jpg)
+![Close-ups of a simulated *meander* pattern, and its actual weave with floating threads.](figures/05-meander.jpg)
 
 Figure 5 shows close-ups of the simulated *meander* pattern and its
-actual weave. The differences are due to the behaviour of the long
-'floating' threads, and the pattern is distorted further when the
-fabric is removed from the loom and the tension is lost. The extent to
-which it is possible, or even desirable to include such material
-limitations into a weaving language or model was one of our main
-topics of inquiry when talking to our advisers (particularly esteemed
-industrial weaver Leslie Downes). Through discussion, we came to
-understand that simulating such physical interaction between threads
-is beyond even the even the most expensive simulation software.
+actual weave. There are clear differences visible between them, due to
+the behaviour of the long 'floating' threads; the pattern would be
+distorted further if the fabric were removed from the loom and the
+tension lost. The extent to which it is possible, or even desirable to
+include such material limitations into a weaving language or model was
+one of our main topics of inquiry when talking to our advisers
+(particularly esteemed industrial weaver Leslie Downes). Through
+discussion, we came to understand that simulating such physical
+interaction between threads is beyond even the even the most expensive
+simulation software.
 
 We have already mentioned two aspects of weaving which do not feature
 in weaving software; the structure of selvedge, and the behaviour of

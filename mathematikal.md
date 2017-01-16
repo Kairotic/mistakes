@@ -117,9 +117,9 @@ replacing `O` for red and `:` as orange, to warp a frame loom, shown
 in Figure 1. When weaving, we followed the same sequence for the weft
 threads, resulting in the textile shown in Figure 2.
 
-![Figure 1: A warped frame loom, with colour pattern generated from an L-system.](figures/01-warped-frame-loom.jpg)
+![A warped frame loom, with colour pattern generated from an L-system.](figures/01-warped-frame-loom.jpg)
 
-![Figure 2: Close-up of weave resulting from L-System pattern.](figures/02-lsystem-weave.jpg)
+![Close-up of weave resulting from L-System pattern.](figures/02-lsystem-weave.jpg)
 
 There were two motivations behind this approach, firstly to begin to
 understand weaving by modelling plain weave, and confirming a
