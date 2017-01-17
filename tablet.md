@@ -99,7 +99,7 @@ such as that shown in Figure 11.
 ```
 ](figures/10-mip.png)
 
-![Following same instructions as in Fig. 10, but where the first `(weave-forward 7)` is changed to `(weave-forward 6)` showing very different results.](figures/11-miperror.png)
+![Following the same instructions as in Fig. 10, but where the first `(weave-forward 7)` is changed to `(weave-forward 6)` showing very different results.](figures/11-miperror.png)
 
 If we put our encoded twists into repeating loops, we can make small
 programs with complex results. You can see a comparison with the woven
@@ -115,7 +115,7 @@ form below, created by following the program by hand.
       (twist 5)
       (weave-back 4))
 ```
-](figures/twistpat-comb.jpg)
+](figures/11-twistpat-comb.jpg)
    
 This language was the first we created that describes the actions and
 movement of the weaver. It was mainly of use in understanding the

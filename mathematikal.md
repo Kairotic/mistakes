@@ -119,7 +119,7 @@ threads, resulting in the textile shown in Figure 2.
 
 ![A warped frame loom, with colour pattern generated from an L-system.](figures/01-warped-frame-loom.jpg)
 
-![Close-up of weave resulting from L-System pattern.](figures/02-lsystem-weave.jpg)
+![Close-up of weave resulting from L-system pattern.](figures/02-lsystem-weave.jpg)
 
 There were two motivations behind this approach, firstly to begin to
 understand weaving by modelling plain weave, and confirming a
