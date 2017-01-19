@@ -7,8 +7,6 @@ data Unit = Warp | Weft
 data Weave = Weave {
                    }
 
-
-
 -- Weave as a raster
 data Weave = Weave {draft :: [[Bool]]}
 
