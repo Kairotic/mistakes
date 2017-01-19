@@ -276,4 +276,4 @@ isEvenTimesOdd = isFTimesF isEven isOdd
 isOddTimesEven = isFTimesF isOdd isEven
 ~~~~
 
-We have also defined odd-times-even and even-times-odd numbers.
+We have also defined odd-times-even and even-times-odd numbers, which are definitions 9 and 10.
