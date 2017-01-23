@@ -89,22 +89,22 @@ unit. A representation that truly represents a multitude should
 neither admit the numbers *zero* or *one*.
 
 A way around this is to define a multitude relative to the number two,
-as a pair of units:
+as a pair, or *dyad* of units:
 
 ~~~~{.haskell .colourtex}
-data Multitude a = Pair (Unit a) (Unit a)
+data Multitude a = Dyad (Unit a) (Unit a)
 	| Next (Unit a) (Multitude a)
 ~~~~
 
 The number *four* would then be constructed with the following:
 
 ~~~~{.haskell .colourtex}
-four = Next Unit (Next Unit (Pair Unit Unit))
+four = Next Unit (Next Unit (Dyad Unit Unit))
 ~~~~
 
 It would be nice if we could 'see' this multitude more clearly.  We
 can visualise it by telling Haskell to show a `Unit` with an `x` and
-by stringing together the units across instances of `Pair` and
+by stringing together the units across instances of `Dyad` and
 `Next`:
 
 ~~~~{.haskell .colourtex}
@@ -112,7 +112,7 @@ instance Show (Unit a) where
   show x = "x"
 
 instance Show (Multitude a) where
-  show (Pair u u') = show u ++ show u'
+  show (Dyad u u') = show u ++ show u'
   show (Next u n) = show u ++ show n
 ~~~~{.haskell .colourtex}
 
@@ -129,7 +129,7 @@ familiar with into multitudes, which first defines the conversion from
 `2`, and then the general case, based upon that.
 
 ~~~~{.haskell .colourtex}
-fromInt 2 = Pair Unit Unit
+fromInt 2 = Dyad Unit Unit
 fromInt n | n < 2 = error "There are no multitudes < 2"
           | otherwise = Next Unit $ fromInt (n-1)
 ~~~~
@@ -144,7 +144,7 @@ the left hand multitude first. We may also define `greater` by simple
 swapping the two parameters:
 
 ~~~~{.haskell .colourtex}
-lesser (Pair _ _) (Next _ _) = True
+lesser (Dyad _ _) (Next _ _) = True
 lesser (Next _ a) (Next _ b) = lesser a b
 lesser _ _ = False
 
@@ -155,7 +155,7 @@ We may define the equality operator `==` by taking the same approach:
 
 ~~~~{.haskell .colourtex}
 instance Eq (Multitude a) where
-  (==) (Pair _ _) (Pair _ _) = True
+  (==) (Dyad _ _) (Dyad _ _) = True
   (==) (Next _ a) (Next _ b) = a == b
   (==) _ _ = False
 ~~~~
@@ -168,7 +168,7 @@ repeatedly subtract one multitude from another (using
 ~~~~{.haskell .colourtex}
 measureAgainst :: Multitude a -> Multitude a -> Maybe (Multitude a)
 measureAgainst (Next _ x) (Next _ y) = measureAgainst x y
-measureAgainst (Pair _ _) (Next _ (Next _ x)) = Just x
+measureAgainst (Dyad _ _) (Next _ (Next _ x)) = Just x
 measureAgainst _ _ = Nothing
 
 measures :: Multitude a -> Multitude a -> Bool
@@ -218,18 +218,18 @@ Euclid's definition, at least according to the English translation we
 are using.
 
 ~~~~{.haskell .colourtex}
-removeUnit (Pair _ _) = error "Cannot remove a unit from two"
+removeUnit (Dyad _ _) = error "Cannot remove a unit from two"
 removeUnit (Next _ n) = n
 
 addUnit n = Next Unit n
 
 balance :: Multitude a -> Multitude a -> Maybe (Multitude a)
 balance a b | lesser a b = Nothing
-            | a == (Pair _ _) = Nothing
+            | a == (Dyad _ _) = Nothing
             | a == b = Just (a, b)
             | otherwise = balance (removeUnit a) (addUnit b)
 
-isEven (Next u (Next u' a)) = isJust (balance a (Pair u u'))
+isEven (Next u (Next u' a)) = isJust (balance a (Dyad u u'))
 isEven _ = False
 ~~~~
 
@@ -243,7 +243,7 @@ this amiguity is removed.
 
 ~~~~{.haskell .colourtex}
 isOdd a = partOne a || partTwo a
-  where partOne (Next u (Next u' a)) = (isNothing (balance a (Pair u u')))
+  where partOne (Next u (Next u' a)) = (isNothing (balance a (Dyad u u')))
         partOne _ = False
         partTwo a = isEven (addUnit a)
 ~~~~
@@ -277,3 +277,13 @@ isOddTimesEven = isFTimesF isOdd isEven
 ~~~~
 
 We have also defined odd-times-even and even-times-odd numbers, which are definitions 9 and 10.
+
+## Dyadic mistakes
+
+Having come part of the way to implementing Dyadic arithmetic in the
+Haskell type system, we have undoubtedly made mistakes. In particular,
+it would seem that while units are not considered to be multitudes,
+avoiding using them in calculations altogether is not teneble and
+leads to errors. The relationship between parts, numbers and units is
+perhaps not straightforward to model with a rigid type structure.
+
