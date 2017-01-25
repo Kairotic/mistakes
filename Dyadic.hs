@@ -79,10 +79,10 @@ removeUnit (Next _ n) = n
 
 addUnit n = Next Unit n
 
-balance :: Multitude a -> Multitude a -> Maybe (Multitude a)
-balance a b | a == b = Just a
+balance :: Multitude a -> Multitude a -> Maybe (Either (Multitude a) (Unit a))
+balance a b | a == b = Just (Left a)
             | lesser a b = Nothing
-            | a == (Dyad Unit Unit) = Nothing
+            | a == (Dyad Unit Unit) && b ==  = Just (Right Unit)
             | otherwise = balance (removeUnit a) (addUnit b)
 
 isEven (Next u (Next u' a)) = isJust (balance a (Dyad u u'))
