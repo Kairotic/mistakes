@@ -8,13 +8,19 @@ the end result, in order to explain how the structures and patterns
 emerge. Weaving is very much a 3-dimensional process, and our previous
 visualisations failed to show this well.
 
-![Sketch by Ellen Harlizius-Klück while explaining the warp weighted loom (left) and resulting simulation (right).](figures/15-twin.jpg)
+\begin{figure}
+\begin{center}
+\subfloat[Sketch by Ellen Harlizius-Klück while explaining the warp weighted loom (left) and resulting simulation (right).]{\includegraphics[width=0.5\textwidth]{figures/15-twin.jpg}}
+\hspace{0.5em}
+\subfloat[The \emph{pattern matrix} design.]{\includegraphics[width=0.4\textwidth]{figures/16-pm1.jpg}}
+\end{center}
+\caption{Design sketches that lead to the \emph{Pattern Matrix}}
+\end{figure}
 
 We built a 3D simulation of a warp weighted loom which ran on a
 Raspberry Pi computer, which allows for easy integration with our
 experimental hardware.
 
-![Design sketch of the *pattern matrix*.](figures/16-pm1.jpg)
 
 Following our experience with the Flotsam prototype, we decided to
 explore tangible programming further. The pattern matrix was the next
@@ -81,8 +87,12 @@ Vertical flip - decimal values: 0,4,5,6
     - -   - -   + -   - + 
     - -   - +   - +   - +
 
-
-![A member of staff at Miners Court extra care housing scheme trying the first working version of the tangible weavecoding. The Raspberry Pi displays the weave structure on the simulated warp weighted loom, with a single colour for each warp and weft thread.](figures/17-DSC_1064.jpg)
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figures/17-DSC_1064.jpg}
+\caption{A member of staff at Miners Court extra care housing scheme trying the first working version of the tangible weavecoding. The Raspberry Pi displays the weave structure on the simulated warp weighted loom, with a single colour for each warp and weft thread.}
+\end{center}
+\end{figure}
 
 The 3D warp weighted loom simulation was our first to include selvedge
 calculation, as well as animating the shed lift and weft thread

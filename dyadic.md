@@ -114,7 +114,7 @@ instance Show (Unit a) where
 instance Show (Multitude a) where
   show (Dyad u u') = show u ++ show u'
   show (Next u n) = show u ++ show n
-~~~~{.haskell .colourtex}
+~~~~
 
 Then the number `four` is shown like this (here the `> ` prefixes the
 expression `four`, and the result is shown in the following line):
@@ -269,7 +269,8 @@ measure a b = do m <- measureAgainst a b
 We can then find the even-times-even numbers using an exhaustive search:
 
 ~~~~{.haskell .colourtex}
-isFTimesF f f' m = or $ catMaybes [(f <$> measure a m) | a <- filter f' (lessers m)]
+isFTimesF f f' m = or $ catMaybes [(f <$> measure a m)
+                                   | a <- filter f' (lessers m)]
 
 isEvenTimesEven = isFTimesF isEven isEven
 isEvenTimesOdd = isFTimesF isEven isOdd

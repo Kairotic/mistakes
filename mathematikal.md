@@ -2,7 +2,7 @@
 
 Our initial attempt at reaching an understanding of the complexities
 of weaving predated the WeavingCodes project and took place during the
-Mathematickal arts workshop [http://fo.am/mathematickal_arts/] at Foam
+[Mathematickal arts workshop](http://fo.am/mathematickal_arts/) at Foam
 Brussels in 2011. This workshop, with Tim Boykett and textile designer
 and educator Carole Collet was devoted to bringing together the arts
 of mathematics, textiles and computer programming.
@@ -20,27 +20,31 @@ It only takes a few lines of code (shown below in the *Scheme*
 language) to calculate the colours of a plain weave, using lists of
 warp and weft yarn as input.
 
-    ;; return warp or weft, dependent on the position
-    (define (stitch x y warp weft)
-      ;; a simple way to describe a 2x2 plain weave kernel
-      (if (eq? (modulo x 2)
-               (modulo y 2))
-      warp weft))
+\begin{lstlisting}
+;; return warp or weft, dependent on the position
+(define (stitch x y warp weft)
+  ;; a simple way to describe a 2x2 plain weave kernel
+  (if (eq? (modulo x 2)
+           (modulo y 2))
+  warp weft))
 
-    ;; prints out a weaving, picking warp or weft depending on the position
-    (define (weave warp weft)
-      (for ((x (in-range 0 (length weft))))
-         (for ((y (in-range 0 (length warp))))
-            (display (stitch x y 
-                             (list-ref warp y)
-                             (list-ref weft x))))
-       (newline)))
+;; prints out a weaving, picking warp or weft depending on the
+;; position
+(define (weave warp weft)
+  (for ((x (in-range 0 (length weft))))
+     (for ((y (in-range 0 (length warp))))
+        (display (stitch x y 
+                         (list-ref warp y)
+                         (list-ref weft x))))
+   (newline)))
+\end{lstlisting}
 
 With this small computer program we may visualise the weaves with
 textual symbols representing different colours. For example, to
 specify distinct colours for the warp and weft threads:
 
-`(weave '(O O O O O O O) '(: : : : : : : : :))`
+\begin{lstlisting}
+(weave '(O O O O O O O) '(: : : : : : : : :))
 
      O : O : O : O
      : O : O : O :
@@ -51,6 +55,7 @@ specify distinct colours for the warp and weft threads:
      O : O : O : O
      : O : O : O :
      O : O : O : O
+\end{lstlisting}
 
 The above simply shows the structure of the warp/weft crossings, with
 all warps having a colour represented by `O`, and all wefts by one
@@ -59,7 +64,8 @@ got a glimpse of the generative possibilities of even plain weave.
 For example, 2:2 alternating colour of both warp and weft threads,
 with an offset on the weft:
 
-`(weave '(O O : : O O : : O O) '(O : : O O : : O O :))`
+\begin{lstlisting}
+(weave '(O O : : O O : : O O) '(O : : O O : : O O :))
 
      : O : : : O : : : O
      O : : : O : : : O :
@@ -70,6 +76,7 @@ with an offset on the weft:
      O O O : O O O : O O
      O O : O O O : O O O
      : O : : : O : : : O
+\end{lstlisting}
 
 This emergence of pattern will be familiar to an experienced weaver,
 but a great surprise to a computer programmer. We wanted to explore
@@ -83,26 +90,36 @@ uninitiated. We began with a starting colour (known as an *axiom*),
 and then followed two 'search-replace' operations repeatedly,
 following the following simple rules:
 
+\begin{lstlisting}
     Axiom: O
     Rule 1: O => O:O:
     Rule 2: : => :O:
+\end{lstlisting}
 
 In the above, `=>` simply means search for the symbol on the left, and
 replace with the symbols on the right. So, we begin with the axiom:
 
+\begin{lstlisting}
     O
+\end{lstlisting}
 
 Then run rule 1 on it - replacing `O` with `O:O:`
 
+\begin{lstlisting}
     O:O:
+\end{lstlisting}
 
 Then run rule two, replacing all instances of `:` with `:O:`:
 
+\begin{lstlisting}
     O:O:O:O:
+\end{lstlisting}
 
 And repeat both these steps one more time:
 
+\begin{lstlisting}
     O:O:O:O::O:O:O:O:O::O:O:O:O:O::O:O:O:O:O::O:
+\end{lstlisting}
 
 This technique allows us to use a very small representation that
 expands into a long, complex form. However, our text-based
@@ -114,12 +131,17 @@ We could keep running our rules forever, the string of text will just
 keep growing. However, to create a fabric of manageable size we
 decided to run them just one more time, then read off the pattern
 replacing `O` for red and `:` as orange, to warp a frame loom, shown
-in Figure 1. When weaving, we followed the same sequence for the weft
-threads, resulting in the textile shown in Figure 2.
+in Figure \ref{lsystem-warp}. When weaving, we followed the same sequence for the weft
+threads, resulting in the textile shown in Figure \ref{lsystem-weave}.
 
-![A warped frame loom, with colour pattern generated from an L-system.](figures/01-warped-frame-loom.jpg)
+\begin{figure}[h]
+\begin{center}
+  \subfloat[\label{lsystem-warp}The warped frame loom.]{\includegraphics[width=0.45\textwidth]{figures/01-warped-frame-loom.jpg}}
+  \hspace{1em}\subfloat[\label{lsystem-weave}Close-up of resulting weave.]{\includegraphics[width=0.45\textwidth]{figures/02-lsystem-weave.jpg}}
+  \caption{\label{lsystem-combined}Realisation of weave resulting from pattern generated from an L-System.}
+\end{center}
+\end{figure}
 
-![Close-up of weave resulting from L-system pattern.](figures/02-lsystem-weave.jpg)
 
 There were two motivations behind this approach, firstly to begin to
 understand weaving by modelling plain weave, and confirming a

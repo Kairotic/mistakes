@@ -101,12 +101,13 @@ thread, by composing together a warp, with a turn inward, and a
 repeating over/under:
 
 ````
-tabby h w = warp h w ++ [TurnIn] ++ threadWeftBy (rot 1) ([Over,Under]) h w
+tabby h w = warp h w ++ [TurnIn]
+                     ++ threadWeftBy (rot 1) ([Over,Under]) h w
 ````
 
 Following this weave produces the following:
 
-''''
+~~~~
  .-    .--.  .--.  .--.  .--.                                           
  `--#--+--#--+--#--+--#--+--#--.                                        
  .--+--#--+--#--+--#--+--#--+--'                                        
@@ -118,7 +119,7 @@ Following this weave produces the following:
  .--+--#--+--#--+--#--+--#--+--'                                        
  `--#--+--#--+--#--+--#--+--#--.                                        
     `--'  `--'  `--'  `--'  `--'                                        
-''''
+~~~~
 
 An advantage of this approach is that it is able to represent a case
 where the weft threads of a weave are pulled, in order to become a
@@ -130,7 +131,12 @@ proof of concept, where a the weft of a four-twill later becomes the
 warp of a tabby pattern.
 
 ````
-[TurnOut,TurnIn,TurnOut,Pull 8, TurnIn,Pull 1] ++ warp 8 9 ++ [TurnIn] ++ (weftToWarp 6 $ threadWeftBy'' Odd (rot 1) [Over,Over,Under,Under] 8 9) ++ [TurnOut,TurnIn,TurnIn] ++ threadWeftBy'' Odd (rot 1) [Over,Under] 10 6
+[TurnOut,TurnIn,TurnOut,Pull 8, TurnIn,Pull 1] ++ warp 8 9 ++ [TurnIn]
+ ++ (weftToWarp 6 $
+     threadWeftBy'' Odd (rot 1) [Over,Over,Under,Under] 8 9
+    )
+ ++ [TurnOut,TurnIn,TurnIn]
+ ++ threadWeftBy'' Odd (rot 1) [Over,Under] 10 6
 ````
 
        .--------------------------.                         

@@ -1,4 +1,4 @@
-# tablet weaving simulation
+# Tablet weaving simulation
 
 Tablet weaving (also known as card weaving) is an ancient form of
 textile pattern production, using cards which are rotated to provide
@@ -8,115 +8,110 @@ and that form the borders of a larger warp weighted weaving.
 
 Tablet weaving is extremely complex, so in a similar manner to the 4
 shaft loom, we devised a language/notation to help better understand
-it. In the same way as before, this language can be used either to
-drive a computer simulation, or can be followed when weaving.
+it. As before, this language can be used either to drive a computer
+simulation, or can be followed when weaving. The following shows the
+output for a simple program written in this language, consisiting of
+the single-instruction procedure `(weave-forward 16)`.
 
-![Simulated tablet weave for the single instruction `(weave-forward 16)`.](figures/06-forward16.png)
+\begin{center}
+\mbox{
+\includegraphics[width=0.5\textwidth]{figures/06-forward16.png}
+}
+\end{center}
 
-The language consists of simple instructions to represent the movement
-of the cards to create each shed. For example, Figure 6 shows a simple
-case where cards are moved a quarter-turn to create each of 16
-sheds. The card rotations are shown on the left for each of 8 cards,
-the simulated weaving is on the right for the top and bottom of the
-fabric. `(weave-forward 16)` turns all the cards a quarter turn, adds
-one weft and repeats this 16 times.
+The language consists of such simple instructions to represent the
+movement of the cards to create each shed. The previous example shows
+a simple case where cards are moved a quarter-turn to create each of
+16 sheds. The card rotations are shown on the left for each of 8
+cards, the simulated weaving is on the right for the top and bottom of
+the fabric. `(weave-forward 16)` turns all the cards a quarter turn,
+adds one weft and repeats this 16 times.
 
 In our simulation, the cards are set up with a double face weave on
 square cards: black, black, white, white clockwise from the top right
 corner. We can offset these cards from each other first, to change the
 pattern. The `rotate-forward` instruction turns only the specified
-cards a quarter turn forward without weaving a weft, illustrated in Figure 7.
+cards a quarter turn forward without weaving a weft, illustrated in
+the following code and simulated output:
 
-![Simulated tablet weave for the following:
-```
-(rotate-forward 0 1 2 3 4 5)
-(rotate-forward 0 1 2 3)
-(rotate-forward 0 1)
-(weave-forward 32)
-```
-](figures/07-diagonal.png)
+\begin{center}
+\begin{minipage}[c]{0.25\linewidth}
+\includegraphics[width=1\textwidth]{figures/07-diagonal.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.60\linewidth}
+\lstset{language=Lisp}
+\lstinputlisting{code/diagonal.scm}
+\end{minipage}
+\end{center}
 
 One interesting limitation of tablet weaving is that it is not
-possible to weave 32 forward quarter rotates without completely
+possible to weave 32 forward quarter rotations without completely
 twisting up the warp, so we need to go forward and backwards to make
-something physically weavable. However as Figure 8 demonstrates, if we
-do so then a 'zig zag' pattern results. Figure 9 shows that a
-different starting pattern that better matches the stitch direction.
+something physically weavable. However as the below demonstrates, if we
+do so, then a 'zig zag' pattern results.
 
-![```
-    (rotate-forward 0 1 2 3 4 5)
-    (rotate-forward 0 1 2 3)
-    (rotate-forward 0 1)
-    (repeat 4
-      (weave-forward 4)
-      (weave-back 4))
-```
-](figures/08-zigzag1.png)
 
-![```
-    (rotate-forward 0 1 2 3 4 5 6)
-    (rotate-forward 0 1 2 3 4 5) 
-    (rotate-forward 0 1 2 3 4)
-    (rotate-forward 0 1 2 3)
-    (rotate-forward 0 1 2)
-    (rotate-forward 0 1)
-    (rotate-forward 0)
-    (repeat 4
-      (weave-forward 4)
-      (weave-back 4))
-```
-](figures/09-zigzag2.png)
+\begin{center}
+\begin{minipage}[c]{0.25\linewidth}
+\includegraphics[width=1\textwidth]{figures/08-zigzag1.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.60\linewidth}
+\lstset{language=Lisp}
+\lstinputlisting{code/zigzag.scm}
+\end{minipage}
+\end{center}
+
+The following shows that a different starting pattern better matches the
+stitch direction.
+
+
+\begin{center}
+\begin{minipage}[c]{0.25\linewidth}
+\includegraphics[width=1\textwidth]{figures/09-zigzag2.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.60\linewidth}
+\lstset{language=Lisp}
+\lstinputlisting{code/zigzag2.scm}
+\end{minipage}
+\end{center}
 
 As an alternative to specifying rotation offsets as above, we can use
 *twist* to form patterns. Accordingly, the `twist` command takes a
 list of cards to twist, and results in these cards effectively
 reversing their turn direction compared to the others, as demonstrated
-by Figure 10. With double faced weave, the twist needs to take place
+below. With double faced weave, the twist needs to take place
 when the cards are in the right rotation, otherwise we get an 'error',
-such as that shown in Figure 11.
+such as that shown below:
 
-
-![
-```
-(weave-forward 7)
-    (twist 0 1 2 3)
-    (weave-back 1)
-    (repeat 2
-      (weave-forward 2)
-      (weave-back 2))
-    (weave-forward 1)
-    (twist 2 3 4 5)
-    (weave-back 1)
-    (repeat 2
-      (weave-forward 2)
-      (weave-back 2))
-    (weave-forward 1)
-    (twist 1 2 5 6)
-    (weave-back 1)
-    (repeat 2
-      (weave-forward 2)
-      (weave-back 2))
-```
-](figures/10-mip.png)
-
-![Following the same instructions as in Fig. 10, but where the first `(weave-forward 7)` is changed to `(weave-forward 6)` showing very different results.](figures/11-miperror.png)
+\begin{center}
+\begin{minipage}[c]{0.25\linewidth}
+\includegraphics[width=1\textwidth]{figures/10-mip.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.60\linewidth}
+\lstset{language=Lisp}
+\lstinputlisting{code/mip.scm}
+\end{minipage}
+\end{center}
 
 If we put our encoded twists into repeating loops, we can make small
 programs with complex results. You can see a comparison with the woven
 form below, created by following the program by hand.
 	  
-![The following code, executed both by the simulation and by hand.```
-```
-(weave-forward 1)
-    (twist 0 2 4 6)
-    (repeat 4
-      (twist 3)
-      (weave-forward 4)
-      (twist 5)
-      (weave-back 4))
-```
-](figures/11-twistpat-comb.jpg)
-   
+\begin{center}
+\begin{minipage}[c]{0.5\linewidth}
+\includegraphics[width=1\textwidth]{figures/12-twistpat-comb.jpg}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.35\linewidth}
+\lstset{language=Lisp}
+\lstinputlisting{code/twistpat-comb.scm}
+\end{minipage}
+\end{center}
+
 This language was the first we created that describes the actions and
 movement of the weaver. It was mainly of use in understanding the
 complexities of tablet weaving, indeed some of this remains a mystery

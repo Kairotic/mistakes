@@ -23,20 +23,30 @@ colour. The L-system rules for the warp/weft yarn sequences are
 constructed from the positions the blocks are plugged into, using a
 custom hardware interface.
 
-![The *Flotsam* prototype for teaching children programming .](figures/12-flotsam.jpg)
+\begin{figure}
+\begin{center}
+\subfloat[\label{flotsam}Interface designed for teaching children programming.]{
+\includegraphics[width=0.4\textwidth]{figures/12-flotsam.jpg}
+}
+\hspace{0.5em}
+\subfloat[\label{star}A woven pattern created with Flotsam, exhibiting different threads qualities described using the physical blocks.]{
+\includegraphics[width=0.4\textwidth]{figures/13-star.png}
+}
+\end{center}
+\caption{The Flotsam prototype}
+\end{figure}
 
 The weaving simulation runs on a Raspberry Pi computer, and the
 overall system is designed to describe different weave patterns than
 those possible with Jacquard looms, through the inclusion of
 additional yarn properties beyond colour. The version shown in Figure
-12 is restricted to plain weave, but more complex structures can be
-created as Figure 13 demonstrates. The flotsam tangible hardware was
+\ref{flotsam} is restricted to plain weave, but more complex structures can be
+created as Figure \ref{star} demonstrates. The flotsam tangible hardware was
 used in primary schools and tutoring with children, and was designed
 so the blocks could be used in many different ways - for example,
 experiments beyond weaving included an interface with the popular
 *Minecraft* computer game and a music synthesiser.
 
-![A woven pattern created with Flotsam, exhibiting different threads qualities described using the physical blocks.](figures/13-star.png)
 
 As before, the L-system programming approach provided quick
 exploration of the huge variety of weaving patterns, although this
@@ -56,4 +66,9 @@ as a way to allow people to *feel* the symbolic representation rather
 than needing to see it, increasing the range of senses in use during
 programming as well as making the system much easier to explain.
 
-![Profile of the Flotsam prototype, with tactile blocks in situ.](figures/14-flotsam-wrapping.jpg)
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figures/14-flotsam-wrapping.jpg}
+\caption{Profile of the Flotsam prototype, with tactile blocks in situ.}
+\end{center}
+\end{figure}

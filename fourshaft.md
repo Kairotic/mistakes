@@ -19,23 +19,25 @@ logical "OR" operation on each warp thread to calculate which ones are
 picked up. This turns out to be the core of the algorithm -- an
 excerpt of which is shown below:
 
-    ;; 'or's two lists together:
-    ;; (list-or (list 0 1 1 0) (list 0 0 1 1)) => (list 0 1 1 1)
-    (define (list-or a b)
-      (map2
-       (lambda (a b)
-         (if (or (not (zero? a)) (not (zero? b))) 1 0))
-       a b))
-    
-    ;; calculate the shed, given a lift plan position counter
-    ;; shed is 0/1 for each warp thread: up/down
-    (define (loom-shed l lift-counter)
-      (foldl
-       (lambda (a b)
-         (list-or a b))
-       (build-list (length (car (loom-heddles l))) (lambda (a) 0))
-       (loom-heddles-raised l lift-counter)))
+~~~~ {.scheme}
+;; 'or's two lists together:
+;; (list-or (list 0 1 1 0) (list 0 0 1 1)) => (list 0 1 1 1)
+(define (list-or a b)
+  (map2
+   (lambda (a b)
+     (if (or (not (zero? a)) (not (zero? b))) 1 0))
+   a b))
 
+;; calculate the shed, given a lift plan position counter
+;; shed is 0/1 for each warp thread: up/down
+(define (loom-shed l lift-counter)
+  (foldl
+   (lambda (a b)
+     (list-or a b))
+   (build-list (length (car (loom-heddles l))) (lambda (a) 0))
+   (loom-heddles-raised l lift-counter)))
+~~~~
+   
 This code provides understanding of how the warping of a loom
 corresponds to the patterns it produces, and may be quickly
 experimented and played with in a way that is not possible on a
@@ -44,14 +46,20 @@ change. Here follow some example weaves. Colour wise, in all these
 examples the order is fixed – both the warp and the weft alternate
 light/dark yarns.
 
-![The interface for our four shaft loom simulation, showing heddles (above), lift plan (to the right) and simulated weave.](figures/03-boxy.png)
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figures/03-boxy.png}
+
+\caption{\label{boxy}The interface for our four shaft loom simulation, showing heddles (above), lift plan (to the right) and simulated weave.}
+\end{center}
+\end{figure}
 
 As with testing our understanding of plain weave as described in the
 previous section, our next step was to try weaving the structures with
 a real loom and threads, in order to test the patterns produced were
 correct. A frame loom was constructed to weave these patterns, shown
-in Figure 4. Here the shafts are sleyed to pick up the warp as defined
-by the simulation's input (the checkboxes) seen in Fig. 3). The
+in Figure \ref{frame-loom}. Here the shafts are sleyed to pick up the warp as defined
+by the simulation's input (the checkboxes) seen in Fig. \ref{boxy}). The
 threads (which form heddles) are tied on to wooden poles which are
 pulled in different combinations during weaving. This is a similar
 approach as that used in warp weighted looms, much faster than
@@ -61,7 +69,13 @@ tension during the weaving process they do need to be
 strong. Fittingly for this project, configuring the warp with heddles
 felt very much like coding threads, with threads.
 
-![Frame loom constructed to test the four shaft loom simulation.](figures/04-frame-loom.jpg)
+\begin{figure}[h]
+\begin{center}
+\subfloat[\label{frame-loom}Frame loom constructed to test our simulation]{\includegraphics[width=0.45\textwidth]{figures/04-frame-loom.jpg}}
+  \hspace{1em}\subfloat[\label{meander}Close-ups of a simulated \emph{meander} pattern, and its actual weave (with floating threads)]{\includegraphics[width=0.45\textwidth]{figures/05-meander.jpg}}
+  \caption{\label{four-shaft-loom}Testing our simulation of a four-shaft loom}
+\end{center}
+\end{figure}
 
 Often a form of improvisation is required when weaving, even when
 using a predefined pattern. There is a lot of reasoning required in
@@ -80,9 +94,7 @@ as a performing art such as music making. See Emma Cocker's article in
 the present issue of Textile for deep investigation into the relation
 between between live weaving and live coding.
 
-![Close-ups of a simulated *meander* pattern, and its actual weave with floating threads.](figures/05-meander.jpg)
-
-Figure 5 shows close-ups of the simulated *meander* pattern and its
+Figure \ref{meander} shows close-ups of the simulated *meander* pattern and its
 actual weave. There are clear differences visible between them, due to
 the behaviour of the long 'floating' threads; the pattern would be
 distorted further if the fabric were removed from the loom and the
