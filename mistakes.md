@@ -2,7 +2,27 @@
 
 # Abstract
 
+This article presents a series of experiments in software and weaving,
+as part of the Weaving Codes, Coding Weaves project. Different aspects
+of weaving, including plain weave, a four-shaft loom, tablet weaving
+and warp-weighted weaving are simulated, in order to gain greater
+understanding of the craft from the perspective of computer
+science. The production rules of L-Systems are employed to begin to
+explore the expansive possibilities offered even by our simple
+simulations. In order to test our models and gain deeper
+understanding, the languages we produce are interpreted both by the
+computer simulation and by ourselves, through the weaving of textile
+by hand. Physical user interfaces are introduced, in order to help
+communicate the structures and thought processes of weaving. Finally,
+we share our approach to representing a weave from the point of view
+of a thread. Throughout, our aim is not to simulate a weave in its
+entirety, but to gain and share insights into its complexity, and
+begin to gain insights into how the long history of weaving, as a
+fundamentally digital yet ancient craft, can inform the younger fields
+of computer science and engineering.
 
+Keywords: Weaving, Coding, Simulation, L-Systems, Digital Craft,
+Looms, Scheme, Haskell
 
 # Introduction
 
