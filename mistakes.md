@@ -1,5 +1,9 @@
 % Textility of Code: A catalogue of errors
 
+# Abstract
+
+
+
 # Introduction
 
 Through the following article, we look for different ways to represent
@@ -794,5 +798,39 @@ warp of a tabby pattern.
 # Conclusion
 
 Conclusion goes here.
+
+# Funding
+
+This work was supported by the Arts and Humanities Research Council,
+under Grant AH/M002403/1.
+
+# Biographies
+
+Dave Griffiths is ...
+
+
+
+Alex McLean is a live coding musician, digital artist and
+interdisciplinary researcher based in Sheffield, UK. He completed his
+PhD thesis "Artist-Programmers and Programming Languages for the Arts"
+in 2011 in Goldsmiths, University of London, leading into a research
+fellowship at the School of Music, University of Leeds, during which
+time he worked on a number of research projects including leading the
+Weaving Codes, Coding Weaves project with Ellen-Harlizius Klück. He is
+now beginning work on the ERC PENELOPE project as a Post-Doctoral
+researcher at the Deutsches Museum Research Institute.
+
+Alex is active across the digital arts, including co-founding the
+TOPLAP and Algorave live coding and algorithmic music movements, the
+international conferences on Live Interfaces (ICLI) and Live Coding
+(ICLC), the Sonic Pattern symposia, the Festival of Algorithmic and
+Mechanical Movement (with FoAM Kernow), and the Dorkbot electronic art
+meetings in Sheffield and London. He is a director of the Access Space
+charity, working in the area of education and the arts in
+Sheffield. Alex also created the TidalCycles live coding environment,
+now a popular free/open source project used by people across the world
+to make strange music.
+
+http://slab.org/
 
 # Bibliography
