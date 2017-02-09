@@ -840,9 +840,23 @@ under Grant AH/M002403/1.
 
 # Biographies
 
-Dave Griffiths is ...
-
-
+David Griffiths is a game designer, programmer and livecoding
+algoraver based in Cornwall UK. In 2014 he co-founded FoAM Kernow, an
+independent research institution for exploring uncharted regions of
+art, technology and science with Amber Griffiths. In 2014 FoAM Kernow
+was awarded the Soil Association innovation award for the "Farm Crap
+App" and in 2016 David appeared on the Cerys Matthews Radio 6 Music
+show talking about Sonic Kayaks - turning paddlers into citizen
+scientists to help climate change research using music. Since 2013 he
+has lectured as associate professor of critical programming at the
+Robert Schumann School of Music and Media in Düsseldorf, and alongside
+Aymeric Mansoux and Marloes de Valk he created the satirical Facebook
+game Naked on Pluto which won the Telefonica Vida competition in
+2011. David also teaches primary school children, teenagers and school
+teachers programming, Minecraft and electronics, and previously he
+worked in the games (Computer Artworks & Sony Europe) and film
+computer graphics industry (Moving Picture Company), and has credits
+on feature films including Troy and Kingdom of Heaven.
 
 Alex McLean is a live coding musician, digital artist and
 interdisciplinary researcher based in Sheffield, UK. He completed his
