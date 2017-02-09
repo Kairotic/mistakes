@@ -296,7 +296,7 @@ include such material limitations into a weaving language or model was
 one of our main topics of inquiry when talking to our advisers
 (particularly esteemed industrial weaver Leslie Downes). Through
 discussion, we came to understand that simulating such physical
-interaction between threads is beyond even the even the most expensive
+interaction between threads is beyond even the most expensive
 simulation software.
 
 We have already mentioned two aspects of weaving which do not feature
@@ -556,7 +556,7 @@ prototype. The affordability of the programming blocks themselves was
 also an important constraint, partly due to the need for use in public
 places. We therefore designed the blocks as disks, painted white and
 black on opposing sides, and without physical connections. Instead, we
-embedded used magnets within them so that the orientation and position
+embedded magnets within them so that the orientation and position
 of the disks could be picked up by a grid of sensors in the base of
 the pattern matrix, via the *hall effect*. The hall effect sensors
 detect the polarity of nearby magnetic fields, and even with fairly
@@ -644,7 +644,7 @@ represented, and fits programming language affordances very well,
 which are well suited to the processing of lists. But this provides a
 very particular point of view, which does not consider the path of a
 thread, including at the selvedge. Our question then was, what happens
-if we attempt to find a represent which takes the point of view of a
+if we attempt to find a representation which takes the point of view of a
 thread, rather than a weaver?
 
 The below lists just some of the different ways we thought about
@@ -792,7 +792,41 @@ warp of a tabby pattern.
 ~~~~
 
 # Conclusion
+ 
+The investigations reported here represent a kind of crash course for
+us on the 'devil in the details' of weaving, which allowed us to
+appreciate many points of connection between weaving and computer
+science. Each of these approaches to understanding or modelling weaves
+from different points of view are limited in some form. The
+alternative attempt to create an increasingly unwieldy simulation of
+physical woven structure, a task in its entirety which is likely to be
+formally uncomputable. In some ways it is what each of these
+representations miss out that makes them interesting, in the same way
+as the representations of process in every programming language has to
+miss out something in order to be a viable notation system.
 
-Conclusion goes here.
+The overall feeling is that textiles culture has much to offer
+computer science and software engineering, as it has been grappling
+with issues of overlapping and layered notations systems and their
+relationship to physical limitation for so much longer in our
+history. The first computers were looms, and as a practice programming
+has similarly inherited a position in society regarded primarily
+utilitarian and therefore hidden from view.
+
+If we compare the tools and designs which have evolved over millennia
+in weaving to those used in software engineering, we can quickly see
+that software construction as it is practised by the vast majority of
+programmers only makes use of a very narrow set of senses [Somehow
+cite Bret Victor - The Humane Representation of Thought]. This
+disconnection from the physical and social substrates within which
+code runs leads to the unpredictability we experience daily in areas
+of privacy, robustness and security. Perhaps if we look in the right
+places, textile culture can provide us with new ways to answer to some
+of these issues.
+
+Thought]. This disconnection from the physical and social substrates
+within which code runs leads to the unpredictability we experience
+daily in areas of privacy, robustness and security. Perhaps textile
+culture provide part of the answer to some of these issues.
 
 # Bibliography
