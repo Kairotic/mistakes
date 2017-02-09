@@ -797,41 +797,33 @@ warp of a tabby pattern.
 
 # Conclusion
  
-The investigations reported here represent a kind of crash course for
-us on the 'devil in the details' of weaving, which allowed us to
-appreciate many points of connection between weaving and computer
-science. Each of these approaches to understanding or modelling weaves
-from different points of view are limited in some form. The
-alternative attempt to create an increasingly unwieldy simulation of
-physical woven structure, a task in its entirety which is likely to be
-formally uncomputable. In some ways it is what each of these
-representations miss out that makes them interesting, in the same way
-as the representations of process in every programming language has to
-miss out something in order to be a viable notation system.
+The investigations reported above represent a kind of self-driven
+'crash course' on weaving for computer programmers. At the beginning,
+weaving seems straightforward and almost mundane, but there is great
+interest, and as the phrase goes, a whole range of devils in the
+details. Each of the approaches we have taken to understanding weaves
+through modelling have been necessarily limited, but is clear that any
+attempt to create a monolithic simulation of physical woven structure
+is doomed to failure. In some ways, it is what each of our simulations
+and representations misses out that makes them interesting.
 
-The overall feeling is that textiles culture has much to offer
-computer science and software engineering, as it has been grappling
-with issues of overlapping and layered notations systems and their
-relationship to physical limitation for so much longer in our
-history. The first computers were looms, and as a practice programming
-has similarly inherited a position in society regarded primarily
-utilitarian and therefore hidden from view.
+Our overall feeling is that textile culture has much to offer computer
+science and software engineering, having grappled with issues of
+overlapping and layered notation systems, and their relationship to
+physical constraints, for thousands of years. In a sense looms were
+the first computing machinery, and as a practice, programming has
+similarly inherited a position in society regarded primarily
+utilitarian and hidden from view.
 
 If we compare the tools and designs which have evolved over millennia
-in weaving to those used in software engineering, we can quickly see
-that software construction as it is practised by the vast majority of
-programmers only makes use of a very narrow set of senses [Somehow
-cite Bret Victor - The Humane Representation of Thought]. This
-disconnection from the physical and social substrates within which
-code runs leads to the unpredictability we experience daily in areas
-of privacy, robustness and security. Perhaps if we look in the right
-places, textile culture can provide us with new ways to answer to some
-of these issues.
-
-Thought]. This disconnection from the physical and social substrates
-within which code runs leads to the unpredictability we experience
-daily in areas of privacy, robustness and security. Perhaps textile
-culture provide part of the answer to some of these issues.
+in weaving to those used in software engineering, we see that software
+construction as it is practised by the vast majority of programmers
+only makes use of a very narrow set of senses [@Victor14]. We feel
+that this disconnection from the physical and social substrates within
+which code runs right through to the vulnerability we experience daily
+in areas of privacy, robustness and security. Perhaps if we look in
+the right places, textile culture can provide us with new ways to
+answer to some of these issues.
 
 # Funding
 
