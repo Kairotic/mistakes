@@ -2,22 +2,22 @@
 
 # Abstract
 
-This article presents a series of experiments in software and weaving,
-as part of the Weaving Codes, Coding Weaves project. Different aspects
-of weaving, including plain weave, a four-shaft loom, tablet weaving
-and warp-weighted weaving are simulated, in order to gain greater
-understanding of the craft from the perspective of computer
-science. The production rules of L-Systems are employed to begin to
-explore the expansive possibilities offered even by our simple
-simulations. In order to test our models and gain deeper
-understanding, the languages we produce are interpreted both by the
-computer simulation and by ourselves, through the weaving of textile
-by hand. Physical user interfaces are introduced, in order to help
-communicate the structures and thought processes of weaving. Finally,
-we share our approach to representing a weave from the point of view
-of a thread. Throughout, our aim is not to simulate a weave in its
-entirety, but to gain and share insights into its complexity, and
-begin to gain insights into how the long history of weaving, as a
+This article presents a series of informal experiments in software and
+weaving, most of which were conducted as part of the Weaving Codes,
+Coding Weaves project. Different aspects of weaving, including plain
+weave, a four-shaft loom, tablet weaving and warp-weighted weaving are
+simulated, in order to gain greater understanding of the craft from
+the perspective of computer science. The production rules of L-Systems
+are employed to begin to explore the expansive possibilities offered
+even by our simple simulations. In order to test our models and gain
+deeper understanding, the languages we produce are interpreted both as
+computer simulations and by our human selves, through the weaving of
+textile by hand. Physical user interfaces are introduced, in order to
+help communicate the structures and thought processes of
+weaving. Finally, we share our approach to representing a weave from
+the point of view of a thread. Throughout, our aim is not to simulate
+a weave in its entirety, but to gain and share insights into its
+complexity, and begin see how the long history of weaving, as a
 fundamentally digital yet ancient craft, can inform the younger fields
 of computer science and engineering.
 
@@ -29,7 +29,7 @@ Looms, Scheme, Haskell
 Through the following article, we look for different ways to represent
 the structure of ancient weaves with contemporary source
 code. Unusually for an article in the present journal, we approach
-this topic from a position of naivete, as computer programmers rather
+this topic from a position of naivety, as computer programmers rather
 than textile artists. Accordingly, our aims are humble; to attempt to
 simulate certain aspects of weaving in order to greater understand its
 structure, and its relation to contemporary computer languages.
@@ -136,7 +136,7 @@ with an offset on the weft:
 This emergence of pattern will be familiar to an experienced weaver,
 but potentially of great surprise to a computer programmer. We wanted
 to explore these warp/weft thread colour patterns of plain weave
-further, by generating them algorithmically. We chose Lindenmayer
+further, by generating them from an algorithm. We chose Lindenmayer
 systems (L-systems), which are formal grammars originally used to
 model plant or cellular growth [See e.g. @Flake00]. L-systems can be
 related to weaves, in that they consist of rules which may appear to
@@ -177,10 +177,10 @@ And repeat both these steps one more time:
 \end{lstlisting}
 
 This technique allows us to use a very small representation that
-expands into a long, complex form. However, our simple text-based
-representation does not fully represent how the weave appears and
-behaves as a three-dimensional textile, so our next step was to try
-weaving these patterns.
+expands into a long, complex form. However, our two-dimensional
+text-based representation does not fully represent how the weave
+appears and behaves as a three-dimensional textile, so our next step
+was to try weaving these patterns.
 
 We could keep running our rules forever, the string of text will just
 keep growing. However, to create a fabric of manageable size we
@@ -203,13 +203,9 @@ understand weaving by modelling plain weave, and confirming a
 hypothesis (the text-based version of the pattern) by following
 instructions produced by the language to actually weave them. The
 other aspect was to use a generative formal grammar to explore the
-patterns possible given the restriction of plain weave, perhaps in a
-different manner to that used by weavers -- but one that starts to
+patterns possible given the restriction of plain weave -- perhaps in a
+different manner to that used by weavers, but one that starts to
 treat weaving as a computational medium.
-
-This system was restricted by only working with plain weave. Given the
-range of patterns possible, this was not of immediate concern, but
-something we addressed in our later systems.
 
 # Four shaft loom simulation
 
@@ -656,7 +652,7 @@ them to at least share a trace of our thinking around the structure of
 woven threads.
 
 A naive approach to representing a weave would be as a two-dimensional
-grid or raster, for example as a list of lists of boolean values,
+grid or raster, for example as a list of lists of Boolean values,
 representing ups and downs:
 
 ````
@@ -830,10 +826,14 @@ and representations misses out that makes them interesting.
 Our overall feeling is that textile culture has much to offer computer
 science and software engineering, having grappled with issues of
 overlapping and layered notation systems, and their relationship to
-physical constraints, for thousands of years. In a sense looms were
-the first computing machinery, and as a practice, programming has
-similarly inherited a position in society regarded primarily
-utilitarian and hidden from view.
+physical constraints, for thousands of years. In a strong sense looms
+were the first computing machinery, which despite prefiguring the
+development of discrete mathematics in ancient Greece [@Fanfani2016],
+has assumed a position in society regarded as utilitarian, and hidden
+from view. We should be careful that programming does not assume a
+similar position, and celebrate both weaving and coding for the
+creative freedom that engaging deeply with the patterns underlying
+them both.
 
 If we compare the tools and designs which have evolved over millennia
 in weaving to those used in software engineering, we see that software
